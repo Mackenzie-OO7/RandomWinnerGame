@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - Nexus</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;background:#0A0A1B;color:#fff;min-height:100vh;display:flex;align-items:center;justify-content:center}.auth-container{width:100%;max-width:1200px;display:grid;grid-template-columns:1fr 1fr;min-height:600px;background:rgba(255,255,255,.02);border-radius:2rem;overflow:hidden;border:1px solid rgba(255,255,255,.1)}@media(max-width:1024px){.auth-container{grid-template-columns:1fr}.auth-left{display:none}}.auth-left{background:linear-gradient(135deg,#FF6B9D,#C084FC,#60A5FA);padding:3rem;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}.auth-left::before{content:'';position:absolute;width:300px;height:300px;background:rgba(255,255,255,.2);border-radius:50%;top:-100px;right:-100px;animation:float 6s ease-in-out infinite}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-20px)}}.auth-logo{display:flex;align-items:center;gap:1rem;font-size:2rem;font-weight:700;color:#fff}.auth-logo svg{width:48px;height:48px}.auth-hero h1{font-size:3rem;margin:2rem 0 1rem;line-height:1.2}.auth-hero p{font-size:1.125rem;opacity:.9}.auth-features{display:flex;flex-direction:column;gap:1rem}.feature-item{display:flex;align-items:center;gap:.75rem;font-size:.9375rem}.auth-right{padding:3rem;display:flex;align-items:center;justify-content:center}.form-container{width:100%;max-width:400px}.form-header{text-align:center;margin-bottom:2rem}.form-header h2{font-size:2rem;margin-bottom:.5rem}.form-header p{color:rgba(255,255,255,.6)}.auth-tabs{display:flex;gap:.5rem;background:rgba(255,255,255,.05);padding:.25rem;border-radius:.75rem;margin-bottom:2rem}.auth-tab{flex:1;padding:.75rem;background:transparent;border:none;color:rgba(255,255,255,.6);font-weight:600;cursor:pointer;border-radius:.5rem;transition:all .3s}.auth-tab.active{background:linear-gradient(135deg,#FF6B9D,#C084FC);color:#fff}.form-group{margin-bottom:1.5rem}.form-label{display:block;margin-bottom:.5rem;color:rgba(255,255,255,.7);font-size:.875rem}.form-input{width:100%;padding:.875rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:.5rem;color:#fff;font-size:1rem;transition:all .3s}.form-input:focus{outline:none;border-color:#FF6B9D;background:rgba(255,255,255,.08)}.wallet-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem}.wallet-btn{padding:1rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:.75rem;color:#fff;font-weight:600;cursor:pointer;transition:all .3s;display:flex;align-items:center;justify-content:center;gap:.75rem}.wallet-btn:hover{background:rgba(255,255,255,.08);border-color:rgba(255,107,157,.3);transform:translateY(-2px)}.auth-submit{width:100%;padding:1rem;background:linear-gradient(135deg,#FF6B9D,#C084FC);border:none;border-radius:.5rem;color:#fff;font-weight:600;font-size:1rem;cursor:pointer;transition:all .3s;margin-top:1rem}.auth-submit:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(255,107,157,.4)}.divider{display:flex;align-items:center;margin:1.5rem 0;color:rgba(255,255,255,.4);font-size:.875rem}.divider::before,.divider::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.1)}
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-left">
+            <div class="auth-logo">
+                <svg viewBox="0 0 40 40" fill="none">
+                    <circle cx="20" cy="20" r="18" stroke="white" stroke-width="2"/>
+                    <path d="M12 20L18 26L28 14" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+                <span>Nexus</span>
+            </div>
+            <div class="auth-hero">
+                <h1>Your Multichain Credential Hub</h1>
+                <p>Complete quests, earn credentials, and unlock rewards across multiple blockchains.</p>
+            </div>
+            <div class="auth-features">
+                <div class="feature-item"><span>✓</span><span>6+ Blockchains Supported</span></div>
+                <div class="feature-item"><span>✓</span><span>1000+ Active Campaigns</span></div>
+                <div class="feature-item"><span>✓</span><span>On-Chain Verification</span></div>
+            </div>
+        </div>
+        <div class="auth-right">
+            <div class="form-container">
+                <div class="form-header">
+                    <h2>Welcome to Nexus</h2>
+                    <p>Connect your wallet to get started</p>
+                </div>
+                <div class="wallet-grid">
+                    <button class="wallet-btn" onclick="window.location.href='dashboard.html'">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M6 9h12v2H6zm0 4h12v2H6z"/></svg>
+                        MetaMask
+                    </button>
+                    <button class="wallet-btn" onclick="window.location.href='dashboard.html'">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+                        WalletConnect
+                    </button>
+                    <button class="wallet-btn" onclick="window.location.href='dashboard.html'">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><rect x="4" y="4" width="16" height="16" rx="2"/></svg>
+                        Coinbase
+                    </button>
+                    <button class="wallet-btn" onclick="window.location.href='dashboard.html'">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4v16h16V4z"/></svg>
+                        Phantom
+                    </button>
+                </div>
+                <div class="divider"><span style="padding:0 1rem">or sign in with email</span></div>
+                <form>
+                    <div class="form-group">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" class="form-input" placeholder="your@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-input" placeholder="••••••••">
+                    </div>
+                    <button type="submit" class="auth-submit" onclick="window.location.href='dashboard.html';return false">Sign In</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
