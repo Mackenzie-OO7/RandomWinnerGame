@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus - Multichain Credential & Rewards Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="background-wrapper">
+        <div class="floating-orb orb-1"></div>
+        <div class="floating-orb orb-2"></div>
+        <div class="floating-orb orb-3"></div>
+        <div class="mesh-gradient"></div>
+        <div class="particle-container"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="20" cy="20" r="18" stroke="url(#logoGradient)" stroke-width="2"/>
+                    <path d="M12 20L18 26L28 14" stroke="url(#logoGradient)" stroke-width="3" stroke-linecap="round"/>
+                    <circle cx="20" cy="20" r="8" stroke="url(#logoGradient)" stroke-width="2" opacity="0.5"/>
+                    <defs>
+                        <linearGradient id="logoGradient" x1="0" y1="0" x2="40" y2="40">
+                            <stop offset="0%" stop-color="#FF6B9D"/>
+                            <stop offset="50%" stop-color="#C084FC"/>
+                            <stop offset="100%" stop-color="#60A5FA"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span class="brand-name">Nexus</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#campaigns" class="nav-link active">Campaigns</a></li>
+                <li><a href="#credentials" class="nav-link">Credentials</a></li>
+                <li><a href="#rewards" class="nav-link">Rewards</a></li>
+                <li><a href="#community" class="nav-link">Community</a></li>
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-link">Chains ↓</a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="chain-item"><span class="chain-dot eth"></span>Ethereum</a>
+                        <a href="#" class="chain-item"><span class="chain-dot poly"></span>Polygon</a>
+                        <a href="#" class="chain-item"><span class="chain-dot bsc"></span>BSC</a>
+                        <a href="#" class="chain-item"><span class="chain-dot sol"></span>Solana</a>
+                        <a href="#" class="chain-item"><span class="chain-dot arb"></span>Arbitrum</a>
+                        <a href="#" class="chain-item"><span class="chain-dot base"></span>Base</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn-connect">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M21 18V19C21 20.1 20.1 21 19 21H5C3.89 21 3 20.1 3 19V5C3 3.9 3.89 3 5 3H19C20.1 3 21 3.9 21 5V6H12C10.89 6 10 6.9 10 8V16C10 17.1 10.89 18 12 18H21Z" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    Connect Wallet
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-icon">🌐</span>
+                    Multichain Credential Network
+                </div>
+                <h1 class="hero-title">
+                    Earn Credentials,<br/>
+                    <span class="gradient-text">Unlock Rewards</span><br/>
+                    Across All Chains
+                </h1>
+                <p class="hero-subtitle">
+                    Complete quests, build your on-chain reputation, and earn rewards across 20+ blockchains.
+                    Your Web3 identity, unified.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-bubble">
+                        <div class="stat-number">2.8M+</div>
+                        <div class="stat-label">Active Users</div>
+                    </div>
+                    <div class="stat-bubble">
+                        <div class="stat-number">15K+</div>
+                        <div class="stat-label">Live Campaigns</div>
+                    </div>
+                    <div class="stat-bubble">
+                        <div class="stat-number">$45M</div>
+                        <div class="stat-label">Rewards Claimed</div>
+                    </div>
+                </div>
+                <div class="hero-actions">
+                    <button class="btn btn-primary">Explore Campaigns</button>
+                    <button class="btn btn-secondary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                            <polygon points="10,8 16,12 10,16" fill="currentColor"/>
+                        </svg>
+                        Watch Demo
+                    </button>
+                </div>
+                <div class="supported-chains">
+                    <p>Supported on 20+ chains:</p>
+                    <div class="chain-logos">
+                        <div class="chain-logo eth" title="Ethereum"></div>
+                        <div class="chain-logo poly" title="Polygon"></div>
+                        <div class="chain-logo bsc" title="BSC"></div>
+                        <div class="chain-logo sol" title="Solana"></div>
+                        <div class="chain-logo arb" title="Arbitrum"></div>
+                        <div class="chain-logo base" title="Base"></div>
+                        <div class="chain-logo more">+14</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Campaigns -->
+    <section class="campaigns" id="campaigns">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-title-wrapper">
+                    <h2 class="section-title">Featured Campaigns</h2>
+                    <p class="section-subtitle">Complete tasks, earn credentials, and claim exclusive rewards</p>
+                </div>
+                <div class="campaign-filters">
+                    <button class="filter-chip active">All</button>
+                    <button class="filter-chip">🎮 Gaming</button>
+                    <button class="filter-chip">💎 DeFi</button>
+                    <button class="filter-chip">🎨 NFTs</button>
+                    <button class="filter-chip">🌐 Social</button>
+                </div>
+            </div>
+
+            <div class="campaigns-grid">
+                <!-- Campaign Card 1 -->
+                <div class="campaign-card featured">
+                    <div class="campaign-badge hot">🔥 Trending</div>
+                    <div class="campaign-chains">
+                        <span class="mini-chain eth"></span>
+                        <span class="mini-chain poly"></span>
+                    </div>
+                    <div class="campaign-image gradient-bg-1">
+                        <div class="campaign-overlay">
+                            <div class="campaign-reward">
+                                <span class="reward-amount">5,000 USDC</span>
+                                <span class="reward-label">Pool</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="campaign-content">
+                        <div class="campaign-creator">
+                            <div class="creator-avatar avatar-1"></div>
+                            <span class="creator-name">DeFi Legends</span>
+                            <svg class="verified-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#60A5FA" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3 class="campaign-title">Liquidity Provider Challenge</h3>
+                        <p class="campaign-desc">Provide liquidity on UniswapV3 and earn exclusive NFT badges plus USDC rewards</p>
+                        <div class="campaign-tasks">
+                            <div class="task-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                                <span>Connect Wallet</span>
+                            </div>
+                            <div class="task-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                                <span>Provide Liquidity ($100+)</span>
+                            </div>
+                            <div class="task-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                                <span>Hold for 7 days</span>
+                            </div>
+                        </div>
+                        <div class="campaign-meta">
+                            <div class="meta-item">
+                                <span class="meta-icon">👥</span>
+                                <span class="meta-text">12.5K participants</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-icon">⏰</span>
+                                <span class="meta-text">5 days left</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-block">Join Campaign</button>
+                    </div>
+                </div>
+
+                <!-- Campaign Card 2 -->
+                <div class="campaign-card">
+                    <div class="campaign-badge new">✨ New</div>
+                    <div class="campaign-chains">
+                        <span class="mini-chain sol"></span>
+                        <span class="mini-chain base"></span>
+                    </div>
+                    <div class="campaign-image gradient-bg-2">
+                        <div class="campaign-overlay">
+                            <div class="campaign-reward">
+                                <span class="reward-amount">NFT Drop</span>
+                                <span class="reward-label">Limited Edition</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="campaign-content">
+                        <div class="campaign-creator">
+                            <div class="creator-avatar avatar-2"></div>
+                            <span class="creator-name">ArtBlocks DAO</span>
+                            <svg class="verified-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#60A5FA" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3 class="campaign-title">Collector's Quest</h3>
+                        <p class="campaign-desc">Mint and trade NFTs to unlock exclusive generative art pieces</p>
+                        <div class="campaign-tasks">
+                            <div class="task-item completed">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <circle cx="12" cy="12" r="10" fill="#10B981" stroke="#10B981" stroke-width="2"/>
+                                    <path d="M9 12L11 14L15 10" stroke="white" stroke-width="2"/>
+                                </svg>
+                                <span>Follow on Twitter</span>
+                            </div>
+                            <div class="task-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                                <span>Mint 1 NFT</span>
+                            </div>
+                            <div class="task-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                                <span>Trade on OpenSea</span>
+                            </div>
+                        </div>
+                        <div class="campaign-meta">
+                            <div class="meta-item">
+                                <span class="meta-icon">👥</span>
+                                <span class="meta-text">8.2K participants</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-icon">⏰</span>
+                                <span class="meta-text">12 days left</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-block">Join Campaign</button>
+                    </div>
+                </div>
+
+                <!-- Campaign Card 3 -->
+                <div class="campaign-card">
+                    <div class="campaign-badge">⭐ Featured</div>
+                    <div class="campaign-chains">
+                        <span class="mini-chain arb"></span>
+                        <span class="mini-chain eth"></span>
+                    </div>
+                    <div class="campaign-image gradient-bg-3">
+                        <div class="campaign-overlay">
+                            <div class="campaign-reward">
+                                <span class="reward-amount">10,000 ARB</span>
+                                <span class="reward-label">Pool</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="campaign-content">
+                        <div class="campaign-creator">
+                            <div class="creator-avatar avatar-3"></div>
+                            <span class="creator-name">Arbitrum Odyssey</span>
+                            <svg class="verified-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#60A5FA" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3 class="campaign-title">Bridge Master Challenge</h3>
+                        <p class="campaign-desc">Bridge assets to Arbitrum and explore the L2 ecosystem for rewards</p>
+                        <div class="campaign-tasks">
+                            <div class="task-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                                <span>Bridge ETH to Arbitrum</span>
+                            </div>
+                            <div class="task-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                                <span>Swap on Uniswap</span>
+                            </div>
+                            <div class="task-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                                <span>Use 3 DeFi protocols</span>
+                            </div>
+                        </div>
+                        <div class="campaign-meta">
+                            <div class="meta-item">
+                                <span class="meta-icon">👥</span>
+                                <span class="meta-text">25.8K participants</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-icon">⏰</span>
+                                <span class="meta-text">20 days left</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-block">Join Campaign</button>
+                    </div>
+                </div>
+
+                <!-- Campaign Card 4 -->
+                <div class="campaign-card">
+                    <div class="campaign-badge">🎮 Gaming</div>
+                    <div class="campaign-chains">
+                        <span class="mini-chain poly"></span>
+                        <span class="mini-chain bsc"></span>
+                    </div>
+                    <div class="campaign-image gradient-bg-4">
+                        <div class="campaign-overlay">
+                            <div class="campaign-reward">
+                                <span class="reward-amount">Rare Items</span>
+                                <span class="reward-label">+ 2000 MATIC</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="campaign-content">
+                        <div class="campaign-creator">
+                            <div class="creator-avatar avatar-4"></div>
+                            <span class="creator-name">MetaQuest Games</span>
+                            <svg class="verified-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#60A5FA" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3 class="campaign-title">Player Achievement Hunt</h3>
+                        <p class="campaign-desc">Complete in-game missions and unlock legendary items plus token rewards</p>
+                        <div class="campaign-tasks">
+                            <div class="task-item completed">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <circle cx="12" cy="12" r="10" fill="#10B981" stroke="#10B981" stroke-width="2"/>
+                                    <path d="M9 12L11 14L15 10" stroke="white" stroke-width="2"/>
+                                </svg>
+                                <span>Create account</span>
+                            </div>
+                            <div class="task-item completed">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <circle cx="12" cy="12" r="10" fill="#10B981" stroke="#10B981" stroke-width="2"/>
+                                    <path d="M9 12L11 14L15 10" stroke="white" stroke-width="2"/>
+                                </svg>
+                                <span>Complete tutorial</span>
+                            </div>
+                            <div class="task-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                                <span>Win 10 matches</span>
+                            </div>
+                        </div>
+                        <div class="campaign-meta">
+                            <div class="meta-item">
+                                <span class="meta-icon">👥</span>
+                                <span class="meta-text">45.2K participants</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-icon">⏰</span>
+                                <span class="meta-text">30 days left</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-block">Join Campaign</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Credentials Section -->
+    <section class="credentials" id="credentials">
+        <div class="container">
+            <div class="credentials-wrapper">
+                <div class="credentials-content">
+                    <h2 class="section-title">Your On-Chain Identity</h2>
+                    <p class="section-subtitle">Build verifiable credentials as you explore Web3. Every action, every achievement, permanently recorded.</p>
+                    <div class="credential-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">🎯</div>
+                            <div class="feature-text">
+                                <h4>Skill-Based Credentials</h4>
+                                <p>Earn credentials for DeFi mastery, NFT trading, and more</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🔒</div>
+                            <div class="feature-text">
+                                <h4>Privacy First</h4>
+                                <p>You control what data you share and with whom</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🌐</div>
+                            <div class="feature-text">
+                                <h4>Cross-Chain Verified</h4>
+                                <p>One identity across all supported blockchains</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary">View My Credentials</button>
+                </div>
+                <div class="credentials-visual">
+                    <div class="credential-card floating">
+                        <div class="credential-badge badge-1">
+                            <div class="badge-icon">🏆</div>
+                            <div class="badge-info">
+                                <h5>DeFi Expert</h5>
+                                <p>Level 5 • 2,500 XP</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="credential-card floating delay-1">
+                        <div class="credential-badge badge-2">
+                            <div class="badge-icon">🎨</div>
+                            <div class="badge-info">
+                                <h5>NFT Collector</h5>
+                                <p>Level 3 • 1,200 XP</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="credential-card floating delay-2">
+                        <div class="credential-badge badge-3">
+                            <div class="badge-icon">⚡</div>
+                            <div class="badge-info">
+                                <h5>Early Adopter</h5>
+                                <p>Rare • 500 XP</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header centered">
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-subtitle">Start earning credentials and rewards in 3 simple steps</p>
+            </div>
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <div class="step-visual">
+                        <div class="step-icon gradient-1">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M21 18V19C21 20.1 20.1 21 19 21H5C3.89 21 3 20.1 3 19V5C3 3.9 3.89 3 5 3H19C20.1 3 21 3.9 21 5V6" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="step-title">Connect Your Wallet</h3>
+                    <p class="step-desc">Link any wallet from 20+ supported chains. Your identity, your control.</p>
+                </div>
+                <div class="step-connector"></div>
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <div class="step-visual">
+                        <div class="step-icon gradient-2">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M9 11L12 14L22 4" stroke="currentColor" stroke-width="2"/>
+                                <path d="M21 12V19C21 20.1 20.1 21 19 21H5C3.89 21 3 20.1 3 19V5C3 3.9 3.89 3 5 3H16" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="step-title">Complete Campaigns</h3>
+                    <p class="step-desc">Choose from thousands of quests and tasks across DeFi, NFTs, gaming, and more.</p>
+                </div>
+                <div class="step-connector"></div>
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <div class="step-visual">
+                        <div class="step-icon gradient-3">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="step-title">Claim Rewards</h3>
+                    <p class="step-desc">Earn tokens, NFTs, and verifiable credentials that build your Web3 reputation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">🌍</div>
+                    <div class="stat-value">20+</div>
+                    <div class="stat-label">Blockchains Supported</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🎯</div>
+                    <div class="stat-value">15,000+</div>
+                    <div class="stat-label">Active Campaigns</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">💰</div>
+                    <div class="stat-value">$45M+</div>
+                    <div class="stat-label">Rewards Distributed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-value">2.8M+</div>
+                    <div class="stat-label">Community Members</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Build Your Web3 Identity?</h2>
+                <p class="cta-subtitle">Join millions exploring campaigns across 20+ blockchains</p>
+                <div class="cta-actions">
+                    <button class="btn btn-large btn-primary-inverse">Get Started Free</button>
+                    <button class="btn btn-large btn-secondary-inverse">Create Campaign</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col brand-col">
+                    <div class="footer-brand">
+                        <svg class="logo-icon" viewBox="0 0 40 40" fill="none">
+                            <circle cx="20" cy="20" r="18" stroke="url(#footerGradient)" stroke-width="2"/>
+                            <path d="M12 20L18 26L28 14" stroke="url(#footerGradient)" stroke-width="3" stroke-linecap="round"/>
+                            <circle cx="20" cy="20" r="8" stroke="url(#footerGradient)" stroke-width="2" opacity="0.5"/>
+                            <defs>
+                                <linearGradient id="footerGradient" x1="0" y1="0" x2="40" y2="40">
+                                    <stop offset="0%" stop-color="#FF6B9D"/>
+                                    <stop offset="50%" stop-color="#C084FC"/>
+                                    <stop offset="100%" stop-color="#60A5FA"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span>Nexus</span>
+                    </div>
+                    <p class="footer-desc">The multichain credential network empowering your Web3 journey across all blockchains.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title">Platform</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Explore Campaigns</a></li>
+                        <li><a href="#">My Credentials</a></li>
+                        <li><a href="#">Leaderboard</a></li>
+                        <li><a href="#">Rewards</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title">Developers</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">API Reference</a></li>
+                        <li><a href="#">SDK</a></li>
+                        <li><a href="#">GitHub</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Nexus. Multichain credential network.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <span>•</span>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
