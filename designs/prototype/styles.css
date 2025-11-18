@@ -1,1 +1,1248 @@
-/* SwiftChain - Nigerian Logistics */
+/* ============================================
+   SwiftChain - Nigerian Logistics Platform
+   Solana-Powered Supply Chain Tracking
+   ============================================ */
+
+/* ============================================
+   CSS CUSTOM PROPERTIES
+   ============================================ */
+:root {
+    /* Nigeria-Inspired Brand Colors */
+    --nigeria-green: #008751;
+    --nigeria-green-dark: #006B3F;
+    --nigeria-green-light: #00A862;
+
+    /* Solana Brand Colors */
+    --solana-purple: #9945FF;
+    --solana-green: #14F195;
+    --solana-blue: #00D4FF;
+
+    /* Logistics Theme */
+    --logistics-blue: #0066CC;
+    --logistics-orange: #FF6B35;
+    --logistics-teal: #00B4D8;
+    --logistics-navy: #023E8A;
+
+    /* Status Colors */
+    --status-pending: #FFA500;
+    --status-in-transit: #0066CC;
+    --status-delivered: #00A862;
+    --status-delayed: #DC3545;
+
+    /* Sensor Status Colors */
+    --sensor-normal: #00A862;
+    --sensor-warning: #FFA500;
+    --sensor-alert: #DC3545;
+
+    /* Background */
+    --bg-primary: #0A0E1A;
+    --bg-secondary: #111827;
+    --bg-tertiary: #1F2937;
+    --bg-card: rgba(31, 41, 55, 0.5);
+
+    /* Text Colors */
+    --text-primary: #F9FAFB;
+    --text-secondary: #D1D5DB;
+    --text-tertiary: #9CA3AF;
+    --text-muted: #6B7280;
+
+    /* Borders */
+    --border-color: rgba(255, 255, 255, 0.1);
+    --border-color-hover: rgba(255, 255, 255, 0.2);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+    --shadow-glow-green: 0 0 20px rgba(0, 135, 81, 0.4);
+    --shadow-glow-blue: 0 0 20px rgba(0, 180, 216, 0.4);
+
+    /* Spacing */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    --space-3xl: 4rem;
+
+    /* Border Radius */
+    --radius-sm: 0.375rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+    --radius-2xl: 1.5rem;
+    --radius-full: 9999px;
+
+    /* Transitions */
+    --transition-fast: 150ms ease-in-out;
+    --transition-base: 250ms ease-in-out;
+    --transition-slow: 400ms ease-in-out;
+
+    /* Typography */
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+/* ============================================
+   RESET & BASE STYLES
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-sans);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ============================================
+   BACKGROUND EFFECTS
+   ============================================ */
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.bg-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        ellipse at top,
+        rgba(0, 135, 81, 0.15) 0%,
+        transparent 50%
+    ),
+    radial-gradient(
+        ellipse at bottom right,
+        rgba(0, 180, 216, 0.1) 0%,
+        transparent 50%
+    );
+}
+
+.floating-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.1;
+    animation: float-orb 20s ease-in-out infinite;
+}
+
+.orb-green {
+    width: 500px;
+    height: 500px;
+    background: var(--nigeria-green);
+    top: 10%;
+    left: 10%;
+}
+
+.orb-blue {
+    width: 400px;
+    height: 400px;
+    background: var(--logistics-teal);
+    bottom: 20%;
+    right: 15%;
+    animation-delay: 5s;
+}
+
+.orb-orange {
+    width: 350px;
+    height: 350px;
+    background: var(--logistics-orange);
+    top: 60%;
+    left: 50%;
+    animation-delay: 10s;
+}
+
+@keyframes float-orb {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    33% {
+        transform: translate(30px, -30px) scale(1.1);
+    }
+    66% {
+        transform: translate(-20px, 20px) scale(0.9);
+    }
+}
+
+.grid-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.5;
+}
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(10, 14, 26, 0.8);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: white;
+    text-decoration: none;
+    transition: var(--transition-base);
+}
+
+.logo:hover {
+    color: var(--nigeria-green-light);
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--nigeria-green), var(--logistics-teal));
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    transition: var(--transition-base);
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--nigeria-green), var(--logistics-teal));
+    transition: var(--transition-base);
+}
+
+.nav-links a:hover {
+    color: white;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.btn-wallet {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, var(--nigeria-green), var(--nigeria-green-dark));
+    color: white;
+    border: none;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    font-size: 0.9375rem;
+    cursor: pointer;
+    transition: var(--transition-base);
+    box-shadow: var(--shadow-glow-green);
+}
+
+.btn-wallet:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(0, 135, 81, 0.6);
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.hero {
+    position: relative;
+    z-index: 1;
+    padding: 8rem 2rem 4rem;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(0, 135, 81, 0.1);
+    border: 1px solid rgba(0, 135, 81, 0.3);
+    border-radius: var(--radius-full);
+    color: var(--nigeria-green-light);
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, white 0%, var(--nigeria-green-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-description {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition-base);
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--nigeria-green), var(--nigeria-green-dark));
+    color: white;
+    box-shadow: var(--shadow-glow-green);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(0, 135, 81, 0.6);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.trust-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-tertiary);
+    font-size: 0.9375rem;
+}
+
+.trust-item svg {
+    color: var(--nigeria-green);
+}
+
+/* ============================================
+   STATS BAR
+   ============================================ */
+.stats-bar {
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.stats-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--nigeria-green), var(--logistics-teal));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: var(--text-tertiary);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* ============================================
+   TRACKING SECTION
+   ============================================ */
+.tracking-section {
+    position: relative;
+    z-index: 1;
+    padding: 4rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    font-size: 1.125rem;
+    color: var(--text-tertiary);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.tracking-demo {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.tracking-input-container {
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--bg-card);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+}
+
+.input-group svg {
+    color: var(--nigeria-green);
+    flex-shrink: 0;
+}
+
+.input-group input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+}
+
+.input-group input::placeholder {
+    color: var(--text-muted);
+}
+
+.btn-track {
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, var(--nigeria-green), var(--nigeria-green-dark));
+    color: white;
+    border: none;
+    border-radius: var(--radius-lg);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-base);
+}
+
+.btn-track:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow-green);
+}
+
+/* ============================================
+   SHIPMENT CARD
+   ============================================ */
+.shipment-card {
+    background: var(--bg-card);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    padding: 2rem;
+}
+
+.shipment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.shipment-id {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-mono);
+}
+
+.shipment-route {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-tertiary);
+    font-size: 0.9375rem;
+}
+
+.route-point {
+    font-weight: 500;
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-full);
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.status-in-transit {
+    background: rgba(0, 102, 204, 0.1);
+    border: 1px solid rgba(0, 102, 204, 0.3);
+    color: var(--status-in-transit);
+}
+
+.status-in-transit .status-dot {
+    background: var(--status-in-transit);
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* ============================================
+   PROGRESS TRACKING
+   ============================================ */
+.shipment-progress {
+    margin-bottom: 2rem;
+}
+
+.progress-track {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.progress-checkpoint {
+    display: flex;
+    gap: 1rem;
+    position: relative;
+}
+
+.progress-checkpoint::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 40px;
+    width: 2px;
+    height: calc(100% + 1.5rem);
+    background: var(--border-color);
+}
+
+.progress-checkpoint:last-child::before {
+    display: none;
+}
+
+.progress-checkpoint.completed::before {
+    background: var(--nigeria-green);
+}
+
+.checkpoint-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: var(--bg-tertiary);
+    border: 2px solid var(--border-color);
+    color: var(--text-muted);
+}
+
+.progress-checkpoint.completed .checkpoint-icon {
+    background: rgba(0, 135, 81, 0.2);
+    border-color: var(--nigeria-green);
+    color: var(--nigeria-green);
+}
+
+.progress-checkpoint.active .checkpoint-icon {
+    background: rgba(0, 102, 204, 0.2);
+    border-color: var(--status-in-transit);
+    color: var(--status-in-transit);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.checkpoint-info {
+    flex: 1;
+}
+
+.checkpoint-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.checkpoint-time {
+    font-size: 0.875rem;
+    color: var(--text-tertiary);
+    margin-bottom: 0.25rem;
+}
+
+.checkpoint-detail {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+/* ============================================
+   SENSOR GRID
+   ============================================ */
+.sensor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.sensor-card {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+}
+
+.sensor-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.temp-normal {
+    background: rgba(0, 168, 98, 0.1);
+    color: var(--sensor-normal);
+}
+
+.humidity-normal {
+    background: rgba(0, 180, 216, 0.1);
+    color: var(--logistics-teal);
+}
+
+.location-active {
+    background: rgba(0, 102, 204, 0.1);
+    color: var(--logistics-blue);
+}
+
+.door-secure {
+    background: rgba(0, 135, 81, 0.1);
+    color: var(--nigeria-green);
+}
+
+.sensor-info {
+    flex: 1;
+}
+
+.sensor-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+}
+
+.sensor-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.sensor-status {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius-sm);
+    display: inline-block;
+}
+
+.status-normal {
+    background: rgba(0, 168, 98, 0.1);
+    color: var(--sensor-normal);
+}
+
+.status-active {
+    background: rgba(0, 102, 204, 0.1);
+    color: var(--logistics-blue);
+}
+
+.status-secure {
+    background: rgba(0, 135, 81, 0.1);
+    color: var(--nigeria-green);
+}
+
+/* ============================================
+   BLOCKCHAIN PROOF
+   ============================================ */
+.blockchain-proof {
+    padding: 1.5rem;
+    background: rgba(153, 69, 255, 0.05);
+    border: 1px solid rgba(153, 69, 255, 0.2);
+    border-radius: var(--radius-lg);
+}
+
+.proof-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--solana-purple);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.proof-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.proof-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.875rem;
+}
+
+.proof-label {
+    color: var(--text-tertiary);
+}
+
+.proof-value {
+    font-family: var(--font-mono);
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* ============================================
+   PROBLEM SECTION
+   ============================================ */
+.problem-section {
+    position: relative;
+    z-index: 1;
+    padding: 4rem 2rem;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.problems-grid {
+    max-width: 1400px;
+    margin: 3rem auto 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.problem-card {
+    padding: 2rem;
+    background: var(--bg-card);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    transition: var(--transition-base);
+}
+
+.problem-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--nigeria-green);
+    box-shadow: var(--shadow-xl);
+}
+
+.problem-icon {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 135, 81, 0.1);
+    border-radius: var(--radius-lg);
+    color: var(--nigeria-green);
+    margin-bottom: 1.5rem;
+}
+
+.problem-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.problem-stat {
+    display: inline-block;
+    padding: 0.375rem 0.75rem;
+    background: rgba(255, 107, 53, 0.1);
+    border: 1px solid rgba(255, 107, 53, 0.3);
+    border-radius: var(--radius-md);
+    color: var(--logistics-orange);
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.problem-card p {
+    color: var(--text-tertiary);
+    line-height: 1.7;
+}
+
+/* ============================================
+   HOW IT WORKS SECTION
+   ============================================ */
+.how-it-works-section {
+    position: relative;
+    z-index: 1;
+    padding: 4rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.steps-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.step-card {
+    padding: 2rem;
+    background: var(--bg-card);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    transition: var(--transition-base);
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--logistics-teal);
+    box-shadow: var(--shadow-glow-blue);
+}
+
+.step-number {
+    font-size: 3rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--nigeria-green), var(--logistics-teal));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+}
+
+.step-content h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.step-content p {
+    color: var(--text-tertiary);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.step-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tech-badge {
+    padding: 0.375rem 0.75rem;
+    background: rgba(0, 180, 216, 0.1);
+    border: 1px solid rgba(0, 180, 216, 0.3);
+    border-radius: var(--radius-md);
+    color: var(--logistics-teal);
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* ============================================
+   SOLANA BENEFITS SECTION
+   ============================================ */
+.solana-section {
+    position: relative;
+    z-index: 1;
+    padding: 4rem 2rem;
+    background: rgba(153, 69, 255, 0.03);
+    border-top: 1px solid rgba(153, 69, 255, 0.1);
+    border-bottom: 1px solid rgba(153, 69, 255, 0.1);
+}
+
+.solana-benefits {
+    max-width: 1400px;
+    margin: 3rem auto 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.benefit-card {
+    padding: 2rem;
+    background: var(--bg-card);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(153, 69, 255, 0.2);
+    border-radius: var(--radius-xl);
+    text-align: center;
+    transition: var(--transition-base);
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--solana-purple);
+    box-shadow: 0 0 20px rgba(153, 69, 255, 0.3);
+}
+
+.benefit-stat {
+    font-size: 3rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--solana-purple), var(--solana-green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+}
+
+.benefit-label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--solana-purple);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.benefit-card p {
+    color: var(--text-tertiary);
+    line-height: 1.7;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer {
+    position: relative;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.5);
+    border-top: 1px solid var(--border-color);
+    padding: 3rem 2rem 2rem;
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.footer-brand p {
+    color: var(--text-tertiary);
+    line-height: 1.7;
+    max-width: 350px;
+    margin: 1rem 0 1.5rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-tertiary);
+    transition: var(--transition-base);
+}
+
+.social-link:hover {
+    background: rgba(0, 135, 81, 0.1);
+    border-color: var(--nigeria-green);
+    color: var(--nigeria-green);
+}
+
+.footer-column h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    list-style: none;
+}
+
+.footer-links a {
+    color: var(--text-tertiary);
+    text-decoration: none;
+    font-size: 0.9375rem;
+    transition: var(--transition-base);
+}
+
+.footer-links a:hover {
+    color: var(--nigeria-green);
+}
+
+.footer-bottom {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.875rem;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 1024px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        padding: 6rem 1.5rem 3rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .trust-indicators {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .shipment-header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .sensor-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .problems-grid,
+    .steps-container,
+    .solana-benefits {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-container {
+        padding: 1rem;
+    }
+
+    .logo {
+        font-size: 1.25rem;
+    }
+
+    .btn-wallet {
+        padding: 0.625rem 1rem;
+        font-size: 0.875rem;
+    }
+
+    .stats-container {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-value {
+        font-size: 2rem;
+    }
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, var(--nigeria-green), var(--logistics-teal));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
