@@ -3,140 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameForge Academy - Learn, Play, Earn on Immutable</title>
+    <meta name="description" content="SwiftChain - Real-time logistics and supply chain tracking on Solana blockchain for Nigeria">
+    <title>SwiftChain | Nigerian Logistics Tracking on Solana</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Background Container -->
+    <div class="background-container">
+        <div class="bg-gradient"></div>
+        <div class="floating-orb orb-green"></div>
+        <div class="floating-orb orb-blue"></div>
+        <div class="floating-orb orb-orange"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">
-                <svg class="logo" viewBox="0 0 40 40" fill="none">
-                    <rect width="40" height="40" rx="8" fill="url(#logoGradient)"/>
-                    <path d="M20 8L28 16L20 24L12 16L20 8Z" fill="white"/>
-                    <path d="M12 20L20 28L28 20" stroke="white" stroke-width="2" fill="none"/>
-                    <defs>
-                        <linearGradient id="logoGradient" x1="0" y1="0" x2="40" y2="40">
-                            <stop offset="0%" stop-color="#7B3FF2"/>
-                            <stop offset="100%" stop-color="#00D4FF"/>
-                        </linearGradient>
-                    </defs>
-                </svg>
-                <div class="brand-text">
-                    <span class="brand-name">GameForge Academy</span>
-                    <span class="brand-tagline">Powered by Immutable zkEVM</span>
-                </div>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#quests" class="nav-link active">Quests</a></li>
-                <li><a href="#marketplace" class="nav-link">Marketplace</a></li>
-                <li><a href="#academy" class="nav-link">Academy</a></li>
-                <li><a href="#guild" class="nav-link">Guilds</a></li>
-                <li><a href="#leaderboard" class="nav-link">Leaderboard</a></li>
-            </ul>
-            <div class="nav-actions">
-                <div class="network-badge">
-                    <div class="status-dot"></div>
-                    <span>Gas-Free</span>
-                </div>
-                <button class="btn-passport">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2"/>
-                        <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2"/>
-                        <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2"/>
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
-                    Connect Passport
-                </button>
-            </div>
+                </div>
+                <span>SwiftChain</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#tracking">Track Shipment</a></li>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#solutions">Solutions</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+
+            <button class="btn-wallet">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-width="2"/>
+                    <path d="M9 10h.01M15 10h.01M10 15h4" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                Connect Wallet
+            </button>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-background">
-            <div class="particle-field"></div>
-        </div>
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                        <path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="2"/>
-                    </svg>
-                    440+ Games • 3.3M+ Players • 150M+ Transactions
-                </div>
-                <h1 class="hero-title">
-                    Learn Web3 Gaming,<br/>
-                    <span class="gradient-text">Earn NFT Rewards</span>
-                </h1>
-                <p class="hero-subtitle">
-                    Master blockchain gaming through interactive quests, earn NFT badges, and trade on the world's largest gaming marketplace—all gas-free with Immutable Passport.
-                </p>
-                <div class="hero-actions">
-                    <button class="btn btn-primary">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                            <path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M15 12H3" stroke="currentColor" stroke-width="2"/>
-                        </svg>
-                        Start Learning (Gas-Free)
-                    </button>
-                    <button class="btn btn-secondary">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                            <polygon points="10,8 16,12 10,16" fill="currentColor"/>
-                        </svg>
-                        Watch Demo
-                    </button>
-                </div>
-                <div class="passport-features">
-                    <div class="feature-chip">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                            <path d="M9 11l3 3L22 4" stroke="currentColor" stroke-width="2"/>
-                        </svg>
-                        No Gas Fees
-                    </div>
-                    <div class="feature-chip">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                            <path d="M21 10H3M21 6H3M21 14H3M21 18H3" stroke="currentColor" stroke-width="2"/>
-                        </svg>
-                        Google/Apple Login
-                    </div>
-                    <div class="feature-chip">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                            <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
-                        </svg>
-                        Universal Profile
-                    </div>
-                    <div class="feature-chip">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                            <path d="M13 2L3 14h10l-1 8 10-12H12l1-8z" fill="currentColor"/>
-                        </svg>
-                        Pre-Approved TX
-                    </div>
-                </div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                    <polyline points="12 6 12 12 16 14" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                Powered by Solana • 400ms Block Time
             </div>
-            <div class="hero-visual">
-                <div class="nft-showcase">
-                    <div class="nft-card floating">
-                        <div class="nft-image badge-1"></div>
-                        <div class="nft-info">
-                            <h4>Web3 Pioneer</h4>
-                            <p>Legendary Badge</p>
-                        </div>
-                    </div>
-                    <div class="nft-card floating delay-1">
-                        <div class="nft-image badge-2"></div>
-                        <div class="nft-info">
-                            <h4>Smart Contract Master</h4>
-                            <p>Epic Badge</p>
-                        </div>
-                    </div>
-                    <div class="nft-card floating delay-2">
-                        <div class="nft-image badge-3"></div>
-                        <div class="nft-info">
-                            <h4>NFT Collector</h4>
-                            <p>Rare Badge</p>
-                        </div>
-                    </div>
+
+            <h1>Transform Nigerian Logistics with Blockchain Transparency</h1>
+
+            <p class="hero-description">
+                Real-time supply chain tracking on Solana. Eliminate the ₦3.3 trillion ($8 billion) annual inefficiency cost with immutable IoT-powered shipment monitoring across Nigeria's logistics network.
+            </p>
+
+            <div class="cta-buttons">
+                <button class="btn btn-primary">
+                    Track Shipment
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <polyline points="9 18 15 12 9 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <button class="btn btn-secondary">
+                    View Demo
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <polygon points="5 3 19 12 5 21 5 3" fill="currentColor"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Trust Indicators -->
+            <div class="trust-indicators">
+                <div class="trust-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-width="2" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Blockchain Secured</span>
+                </div>
+                <div class="trust-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                        <polyline points="12 6 12 12 16 14" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span>Real-Time Updates</span>
+                </div>
+                <div class="trust-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" stroke-width="2" stroke-linejoin="round"/>
+                        <polyline points="9 22 9 12 15 12 15 22" stroke-width="2"/>
+                    </svg>
+                    <span>₦0.01 Per Transaction</span>
                 </div>
             </div>
         </div>
@@ -144,562 +110,426 @@
 
     <!-- Stats Bar -->
     <section class="stats-bar">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-icon">🎮</div>
-                    <div class="stat-content">
-                        <div class="stat-value">440+</div>
-                        <div class="stat-label">Games on Immutable</div>
-                    </div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-icon">👥</div>
-                    <div class="stat-content">
-                        <div class="stat-value">3.3M+</div>
-                        <div class="stat-label">Passport Users</div>
-                    </div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-icon">📦</div>
-                    <div class="stat-content">
-                        <div class="stat-value">150M+</div>
-                        <div class="stat-label">Transactions</div>
-                    </div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-icon">💎</div>
-                    <div class="stat-content">
-                        <div class="stat-value">5M+</div>
-                        <div class="stat-label">Active NFT Listings</div>
-                    </div>
-                </div>
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-value">$10.95B</div>
+                <div class="stat-label">Nigeria Freight Market (2025)</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">65,000</div>
+                <div class="stat-label">Solana TPS Capability</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">400ms</div>
+                <div class="stat-label">Average Block Time</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">$0.00003</div>
+                <div class="stat-label">Cost Per Transaction</div>
             </div>
         </div>
     </section>
 
-    <!-- Learning Quests -->
-    <section class="quests-section" id="quests">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Learning Quests</h2>
-                <p class="section-subtitle">Complete quests, earn NFT badges, level up your skills—all gas-free</p>
-                <div class="quest-filters">
-                    <button class="filter-btn active">All Quests</button>
-                    <button class="filter-btn">Beginner</button>
-                    <button class="filter-btn">Intermediate</button>
-                    <button class="filter-btn">Advanced</button>
-                    <button class="filter-btn">🔥 Trending</button>
-                </div>
-            </div>
-
-            <div class="quests-grid">
-                <!-- Quest Card 1 -->
-                <div class="quest-card featured">
-                    <div class="quest-badge hot">🔥 Trending</div>
-                    <div class="quest-header">
-                        <div class="quest-icon legendary"></div>
-                        <div class="quest-meta">
-                            <h3 class="quest-title">Immutable Passport Mastery</h3>
-                            <div class="quest-difficulty legendary">Beginner</div>
-                        </div>
-                    </div>
-                    <p class="quest-description">
-                        Learn how to use Immutable Passport for gas-free gaming. Connect with Google/Apple, explore pre-approved transactions, and claim your first NFT badge.
-                    </p>
-                    <div class="quest-rewards">
-                        <div class="reward-label">Rewards:</div>
-                        <div class="reward-items">
-                            <div class="reward-item">
-                                <div class="reward-nft passport-badge"></div>
-                                <span>Passport Pioneer NFT</span>
-                            </div>
-                            <div class="reward-item">
-                                <div class="reward-token">+500 XP</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="quest-progress">
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 60%"></div>
-                        </div>
-                        <span class="progress-text">3/5 Tasks Complete</span>
-                    </div>
-                    <div class="quest-tasks">
-                        <div class="task-item completed">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                <circle cx="12" cy="12" r="10" fill="#10B981" stroke="none"/>
-                                <path d="M8 12l3 3 5-5" stroke="white" stroke-width="2"/>
-                            </svg>
-                            <span>Create Immutable Passport</span>
-                        </div>
-                        <div class="task-item completed">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                <circle cx="12" cy="12" r="10" fill="#10B981" stroke="none"/>
-                                <path d="M8 12l3 3 5-5" stroke="white" stroke-width="2"/>
-                            </svg>
-                            <span>Link Google/Apple Account</span>
-                        </div>
-                        <div class="task-item completed">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                <circle cx="12" cy="12" r="10" fill="#10B981" stroke="none"/>
-                                <path d="M8 12l3 3 5-5" stroke="white" stroke-width="2"/>
-                            </svg>
-                            <span>Explore Gas-Free Features</span>
-                        </div>
-                        <div class="task-item">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                            <span>Test Pre-Approved Transaction</span>
-                        </div>
-                        <div class="task-item">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                            <span>Claim NFT Badge</span>
-                        </div>
-                    </div>
-                    <button class="btn btn-primary btn-block">Continue Quest</button>
-                </div>
-
-                <!-- Quest Card 2 -->
-                <div class="quest-card">
-                    <div class="quest-badge new">✨ New</div>
-                    <div class="quest-header">
-                        <div class="quest-icon epic"></div>
-                        <div class="quest-meta">
-                            <h3 class="quest-title">Global Orderbook Trading</h3>
-                            <div class="quest-difficulty epic">Intermediate</div>
-                        </div>
-                    </div>
-                    <p class="quest-description">
-                        Master cross-marketplace NFT trading using Immutable's Global Orderbook. Learn about shared liquidity and trade on multiple platforms.
-                    </p>
-                    <div class="quest-rewards">
-                        <div class="reward-label">Rewards:</div>
-                        <div class="reward-items">
-                            <div class="reward-item">
-                                <div class="reward-nft trader-badge"></div>
-                                <span>Master Trader NFT</span>
-                            </div>
-                            <div class="reward-item">
-                                <div class="reward-token">+800 XP</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="quest-progress">
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 0%"></div>
-                        </div>
-                        <span class="progress-text">0/4 Tasks Complete</span>
-                    </div>
-                    <div class="quest-tasks">
-                        <div class="task-item">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                            <span>List NFT on TokenTrove</span>
-                        </div>
-                        <div class="task-item">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                            <span>View listing on AtomicHub</span>
-                        </div>
-                        <div class="task-item">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                            <span>Complete cross-marketplace trade</span>
-                        </div>
-                        <div class="task-item">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                            <span>Earn trading fees</span>
-                        </div>
-                    </div>
-                    <button class="btn btn-primary btn-block">Start Quest</button>
-                </div>
-
-                <!-- Quest Card 3 -->
-                <div class="quest-card">
-                    <div class="quest-badge">🎯 Popular</div>
-                    <div class="quest-header">
-                        <div class="quest-icon rare"></div>
-                        <div class="quest-meta">
-                            <h3 class="quest-title">NFT Game Development 101</h3>
-                            <div class="quest-difficulty rare">Advanced</div>
-                        </div>
-                    </div>
-                    <p class="quest-description">
-                        Build your first NFT game on Immutable zkEVM. Learn smart contracts, in-game marketplace integration, and royalty enforcement.
-                    </p>
-                    <div class="quest-rewards">
-                        <div class="reward-label">Rewards:</div>
-                        <div class="reward-items">
-                            <div class="reward-item">
-                                <div class="reward-nft developer-badge"></div>
-                                <span>Game Developer NFT</span>
-                            </div>
-                            <div class="reward-item">
-                                <div class="reward-token">+1500 XP</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="quest-progress">
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 25%"></div>
-                        </div>
-                        <span class="progress-text">2/8 Tasks Complete</span>
-                    </div>
-                    <button class="btn btn-primary btn-block">Continue Quest</button>
-                </div>
-
-                <!-- Quest Card 4 -->
-                <div class="quest-card">
-                    <div class="quest-header">
-                        <div class="quest-icon common"></div>
-                        <div class="quest-meta">
-                            <h3 class="quest-title">Play Gods Unchained</h3>
-                            <div class="quest-difficulty common">Beginner</div>
-                        </div>
-                    </div>
-                    <p class="quest-description">
-                        Explore one of Immutable's flagship games. Learn about play-to-earn mechanics, card NFTs, and competitive gaming.
-                    </p>
-                    <div class="quest-rewards">
-                        <div class="reward-label">Rewards:</div>
-                        <div class="reward-items">
-                            <div class="reward-item">
-                                <div class="reward-nft gods-badge"></div>
-                                <span>Gods Player NFT</span>
-                            </div>
-                            <div class="reward-item">
-                                <div class="reward-token">+300 XP</div>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="btn btn-primary btn-block">Start Quest</button>
-                </div>
-            </div>
+    <!-- Live Shipment Tracking -->
+    <section class="tracking-section" id="tracking">
+        <div class="section-header">
+            <h2 class="section-title">Live Shipment Tracking</h2>
+            <p class="section-subtitle">Track your cargo across Nigeria's transport network with real-time IoT sensor data recorded on Solana</p>
         </div>
-    </section>
 
-    <!-- Global Orderbook Marketplace -->
-    <section class="marketplace-section" id="marketplace">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Global Orderbook Marketplace</h2>
-                <p class="section-subtitle">20M+ orders • 5M+ listings • Shared liquidity across all Immutable marketplaces</p>
+        <div class="tracking-demo">
+            <!-- Track Input -->
+            <div class="tracking-input-container">
+                <div class="input-group">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <rect x="1" y="3" width="15" height="13" rx="2" stroke-width="2"/>
+                        <path d="M16 8h5l3 3v5h-2" stroke-width="2" stroke-linejoin="round"/>
+                        <circle cx="5.5" cy="18.5" r="2.5" stroke-width="2"/>
+                        <circle cx="18.5" cy="18.5" r="2.5" stroke-width="2"/>
+                    </svg>
+                    <input type="text" placeholder="Enter tracking ID (e.g., SWC-LAG-ABJ-001)" id="trackingInput" value="SWC-LAG-ABJ-001">
+                    <button class="btn-track">Track</button>
+                </div>
             </div>
 
-            <div class="orderbook-features">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24" fill="none">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="2"/>
-                            <path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2"/>
+            <!-- Shipment Details Card -->
+            <div class="shipment-card">
+                <div class="shipment-header">
+                    <div>
+                        <h3 class="shipment-id">SWC-LAG-ABJ-001</h3>
+                        <div class="shipment-route">
+                            <span class="route-point">Lagos (Apapa Port)</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <polyline points="9 18 15 12 9 6" stroke-width="2"/>
+                            </svg>
+                            <span class="route-point">Abuja (Federal Capital)</span>
+                        </div>
+                    </div>
+                    <div class="status-badge status-in-transit">
+                        <span class="status-dot"></span>
+                        In Transit
+                    </div>
+                </div>
+
+                <div class="shipment-progress">
+                    <div class="progress-track">
+                        <div class="progress-checkpoint completed">
+                            <div class="checkpoint-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <polyline points="20 6 9 17 4 12" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <div class="checkpoint-info">
+                                <div class="checkpoint-title">Apapa Port</div>
+                                <div class="checkpoint-time">Jan 15, 10:30 AM</div>
+                                <div class="checkpoint-detail">Cleared customs • Loaded on truck</div>
+                            </div>
+                        </div>
+
+                        <div class="progress-checkpoint completed">
+                            <div class="checkpoint-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <polyline points="20 6 9 17 4 12" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <div class="checkpoint-info">
+                                <div class="checkpoint-title">Ibadan Checkpoint</div>
+                                <div class="checkpoint-time">Jan 15, 2:45 PM</div>
+                                <div class="checkpoint-detail">Scanned • All sensors normal</div>
+                            </div>
+                        </div>
+
+                        <div class="progress-checkpoint active">
+                            <div class="checkpoint-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <div class="checkpoint-info">
+                                <div class="checkpoint-title">Lokoja Hub</div>
+                                <div class="checkpoint-time">In Progress</div>
+                                <div class="checkpoint-detail">120 km from destination</div>
+                            </div>
+                        </div>
+
+                        <div class="progress-checkpoint pending">
+                            <div class="checkpoint-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <div class="checkpoint-info">
+                                <div class="checkpoint-title">Abuja Delivery</div>
+                                <div class="checkpoint-time">Est. Jan 16, 8:00 AM</div>
+                                <div class="checkpoint-detail">Awaiting arrival</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IoT Sensor Data -->
+                <div class="sensor-grid">
+                    <div class="sensor-card">
+                        <div class="sensor-icon temp-normal">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M14 14.76V3.5a2.5 2.5 0 00-5 0v11.26a4.5 4.5 0 105 0z" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="sensor-info">
+                            <div class="sensor-label">Temperature</div>
+                            <div class="sensor-value">24.5°C</div>
+                            <div class="sensor-status status-normal">Normal</div>
+                        </div>
+                    </div>
+
+                    <div class="sensor-card">
+                        <div class="sensor-icon humidity-normal">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="sensor-info">
+                            <div class="sensor-label">Humidity</div>
+                            <div class="sensor-value">62%</div>
+                            <div class="sensor-status status-normal">Normal</div>
+                        </div>
+                    </div>
+
+                    <div class="sensor-card">
+                        <div class="sensor-icon location-active">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke-width="2"/>
+                                <circle cx="12" cy="10" r="3" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="sensor-info">
+                            <div class="sensor-label">GPS Location</div>
+                            <div class="sensor-value">Active</div>
+                            <div class="sensor-status status-active">Tracking</div>
+                        </div>
+                    </div>
+
+                    <div class="sensor-card">
+                        <div class="sensor-icon door-secure">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <rect x="3" y="3" width="18" height="18" rx="2" stroke-width="2"/>
+                                <circle cx="15" cy="12" r="1" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <div class="sensor-info">
+                            <div class="sensor-label">Container</div>
+                            <div class="sensor-value">Secure</div>
+                            <div class="sensor-status status-secure">Locked</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blockchain Verification -->
+                <div class="blockchain-proof">
+                    <div class="proof-header">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-width="2"/>
                         </svg>
+                        <span>Verified on Solana</span>
                     </div>
-                    <h3>Shared Liquidity</h3>
-                    <p>List once, sell anywhere. Orders are visible on TokenTrove, AtomicHub, Sphere, and all partner marketplaces.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24" fill="none">
-                            <rect x="3" y="3" width="7" height="7" stroke="currentColor" stroke-width="2"/>
-                            <rect x="14" y="3" width="7" height="7" stroke="currentColor" stroke-width="2"/>
-                            <rect x="3" y="14" width="7" height="7" stroke="currentColor" stroke-width="2"/>
-                            <rect x="14" y="14" width="7" height="7" stroke="currentColor" stroke-width="2"/>
-                        </svg>
-                    </div>
-                    <h3>Cross-Marketplace</h3>
-                    <p>50%+ of trades settle on non-origin marketplaces thanks to global orderbook infrastructure.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24" fill="none">
-                            <path d="M12 2v20M2 12h20" stroke="currentColor" stroke-width="2"/>
-                            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
-                        </svg>
-                    </div>
-                    <h3>Royalty Protection</h3>
-                    <p>First EVM chain with enforceable royalty fees, ensuring creators get paid on every trade.</p>
-                </div>
-            </div>
-
-            <div class="marketplace-grid">
-                <div class="nft-listing featured">
-                    <div class="listing-badge">Featured</div>
-                    <div class="listing-image legendary-sword"></div>
-                    <div class="listing-content">
-                        <div class="listing-game">
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Crect fill='%237B3FF2' width='20' height='20'/%3E%3C/svg%3E" alt="Gods Unchained" class="game-icon">
-                            <span>Gods Unchained</span>
+                    <div class="proof-details">
+                        <div class="proof-item">
+                            <span class="proof-label">Transaction Hash:</span>
+                            <span class="proof-value">5KmX...9PqR</span>
                         </div>
-                        <h3 class="listing-title">Legendary Sword of Light</h3>
-                        <div class="listing-rarity legendary">Legendary</div>
-                        <div class="listing-stats">
-                            <div class="stat">
-                                <span class="label">Attack</span>
-                                <span class="value">+150</span>
-                            </div>
-                            <div class="stat">
-                                <span class="label">Power</span>
-                                <span class="value">98/100</span>
-                            </div>
+                        <div class="proof-item">
+                            <span class="proof-label">Block Height:</span>
+                            <span class="proof-value">234,567,890</span>
                         </div>
-                        <div class="listing-price">
-                            <div class="price-section">
-                                <span class="price-label">Price</span>
-                                <span class="price-value">2.5 ETH</span>
-                                <span class="price-usd">$4,250</span>
-                            </div>
-                            <div class="marketplace-icons">
-                                <div class="marketplace-tag" title="Listed on TokenTrove">TT</div>
-                                <div class="marketplace-tag" title="Listed on AtomicHub">AH</div>
-                            </div>
+                        <div class="proof-item">
+                            <span class="proof-label">Confirmations:</span>
+                            <span class="proof-value">Finalized</span>
                         </div>
-                        <button class="btn btn-primary btn-block">Buy Now (Gas-Free)</button>
-                    </div>
-                </div>
-
-                <div class="nft-listing">
-                    <div class="listing-image epic-character"></div>
-                    <div class="listing-content">
-                        <div class="listing-game">
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Crect fill='%2300D4FF' width='20' height='20'/%3E%3C/svg%3E" alt="Guild of Guardians" class="game-icon">
-                            <span>Guild of Guardians</span>
-                        </div>
-                        <h3 class="listing-title">Epic Guardian Hero</h3>
-                        <div class="listing-rarity epic">Epic</div>
-                        <div class="listing-price">
-                            <div class="price-section">
-                                <span class="price-label">Price</span>
-                                <span class="price-value">0.8 ETH</span>
-                                <span class="price-usd">$1,360</span>
-                            </div>
-                            <div class="marketplace-icons">
-                                <div class="marketplace-tag">TT</div>
-                            </div>
-                        </div>
-                        <button class="btn btn-primary btn-block">Buy Now (Gas-Free)</button>
-                    </div>
-                </div>
-
-                <div class="nft-listing">
-                    <div class="listing-image rare-pet"></div>
-                    <div class="listing-content">
-                        <div class="listing-game">
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Crect fill='%23FF6B9D' width='20' height='20'/%3E%3C/svg%3E" alt="Illuvium" class="game-icon">
-                            <span>Illuvium</span>
-                        </div>
-                        <h3 class="listing-title">Rare Illuvial Companion</h3>
-                        <div class="listing-rarity rare">Rare</div>
-                        <div class="listing-price">
-                            <div class="price-section">
-                                <span class="price-label">Price</span>
-                                <span class="price-value">0.3 ETH</span>
-                                <span class="price-usd">$510</span>
-                            </div>
-                            <div class="marketplace-icons">
-                                <div class="marketplace-tag">AH</div>
-                                <div class="marketplace-tag">SP</div>
-                            </div>
-                        </div>
-                        <button class="btn btn-primary btn-block">Buy Now (Gas-Free)</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Immutable Passport Info -->
-    <section class="passport-section">
-        <div class="container">
-            <div class="passport-grid">
-                <div class="passport-visual">
-                    <div class="passport-card">
-                        <div class="passport-header">
-                            <h3>Immutable Passport</h3>
-                            <div class="passport-badge">Verified</div>
-                        </div>
-                        <div class="passport-avatar"></div>
-                        <div class="passport-info">
-                            <h4>Alex_Gamer_42</h4>
-                            <p>Level 15 • 2,450 XP</p>
-                        </div>
-                        <div class="passport-stats">
-                            <div class="stat-box">
-                                <span class="stat-number">23</span>
-                                <span class="stat-label">NFTs Owned</span>
-                            </div>
-                            <div class="stat-box">
-                                <span class="stat-number">8</span>
-                                <span class="stat-label">Games Played</span>
-                            </div>
-                            <div class="stat-box">
-                                <span class="stat-number">156</span>
-                                <span class="stat-label">Quests Done</span>
-                            </div>
-                        </div>
-                        <div class="passport-badges-mini">
-                            <div class="mini-badge" title="Web3 Pioneer"></div>
-                            <div class="mini-badge" title="Master Trader"></div>
-                            <div class="mini-badge" title="Game Developer"></div>
-                            <div class="mini-badge more">+12</div>
-                        </div>
+    <!-- Problem Solution Section -->
+    <section class="problem-section">
+        <div class="section-header">
+            <h2 class="section-title">Solving Nigeria's ₦3.3 Trillion Logistics Crisis</h2>
+            <p class="section-subtitle">Addressing the real challenges costing Nigeria $8 billion annually</p>
+        </div>
+
+        <div class="problems-grid">
+            <div class="problem-card">
+                <div class="problem-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" stroke-width="2"/>
+                        <line x1="12" y1="9" x2="12" y2="13" stroke-width="2"/>
+                        <circle cx="12" cy="17" r="1" fill="currentColor"/>
+                    </svg>
+                </div>
+                <h3>Poor Infrastructure</h3>
+                <div class="problem-stat">70% of roads need repairs</div>
+                <p>SwiftChain's IoT sensors detect road conditions and optimize routing to avoid damaged infrastructure.</p>
+            </div>
+
+            <div class="problem-card">
+                <div class="problem-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <rect x="3" y="11" width="18" height="11" rx="2" stroke-width="2"/>
+                        <path d="M7 11V7a5 5 0 0110 0v4" stroke-width="2"/>
+                    </svg>
+                </div>
+                <h3>Port Congestion</h3>
+                <div class="problem-stat">Avg 21-day clearance time</div>
+                <p>Blockchain-verified customs data reduces clearance time by providing immutable documentation.</p>
+            </div>
+
+            <div class="problem-card">
+                <div class="problem-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <line x1="12" y1="1" x2="12" y2="23" stroke-width="2"/>
+                        <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" stroke-width="2"/>
+                    </svg>
+                </div>
+                <h3>High Logistics Costs</h3>
+                <div class="problem-stat">$8B lost annually</div>
+                <p>Solana's $0.00003 transaction costs eliminate expensive intermediaries and paperwork.</p>
+            </div>
+
+            <div class="problem-card">
+                <div class="problem-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke-width="2"/>
+                        <circle cx="12" cy="12" r="3" stroke-width="2"/>
+                    </svg>
+                </div>
+                <h3>Lack of Transparency</h3>
+                <div class="problem-stat">40% cargo losses/delays</div>
+                <p>Immutable blockchain records provide end-to-end visibility preventing fraud and theft.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works-section">
+        <div class="section-header">
+            <h2 class="section-title">How SwiftChain Works</h2>
+            <p class="section-subtitle">Solana-powered supply chain tracking with IoT integration</p>
+        </div>
+
+        <div class="steps-container">
+            <div class="step-card">
+                <div class="step-number">01</div>
+                <div class="step-content">
+                    <h3>IoT Sensor Installation</h3>
+                    <p>Attach tamper-proof IoT devices to cargo that monitor temperature, humidity, location, vibration, door status, and more.</p>
+                    <div class="step-tech">
+                        <span class="tech-badge">GPS Tracking</span>
+                        <span class="tech-badge">Temperature Sensors</span>
+                        <span class="tech-badge">Humidity Monitors</span>
                     </div>
                 </div>
-                <div class="passport-content">
-                    <h2>Your Universal Gaming Profile</h2>
-                    <p class="lead">One identity across 440+ games. 3.3M+ users already gaming gas-free.</p>
-                    <div class="passport-features-list">
-                        <div class="feature-item">
-                            <div class="feature-icon-small">✓</div>
-                            <div>
-                                <h4>Passwordless Sign-On</h4>
-                                <p>Login with Google, Apple, or email. No seed phrases to remember.</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon-small">✓</div>
-                            <div>
-                                <h4>Gas-Free Gaming</h4>
-                                <p>Zero transaction fees for all in-game actions. Play without blockchain friction.</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon-small">✓</div>
-                            <div>
-                                <h4>Pre-Approved Transactions</h4>
-                                <p>Mint, craft, and trade without wallet pop-ups. Seamless gaming experience.</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon-small">✓</div>
-                            <div>
-                                <h4>Universal Identity</h4>
-                                <p>Your profile, assets, and achievements work across all Immutable games.</p>
-                            </div>
-                        </div>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">02</div>
+                <div class="step-content">
+                    <h3>Real-Time Data Recording</h3>
+                    <p>Sensor data is transmitted every 30 seconds and recorded immutably on Solana blockchain with 400ms confirmation.</p>
+                    <div class="step-tech">
+                        <span class="tech-badge">Solana PoH</span>
+                        <span class="tech-badge">400ms Blocks</span>
+                        <span class="tech-badge">Immutable Logs</span>
                     </div>
-                    <button class="btn btn-primary btn-large">Create Your Passport</button>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">03</div>
+                <div class="step-content">
+                    <h3>Smart Contract Automation</h3>
+                    <p>Automated alerts trigger on threshold breaches. Payments release automatically upon verified delivery.</p>
+                    <div class="step-tech">
+                        <span class="tech-badge">Auto Alerts</span>
+                        <span class="tech-badge">Smart Payments</span>
+                        <span class="tech-badge">Compliance Checks</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">04</div>
+                <div class="step-content">
+                    <h3>Transparent Tracking</h3>
+                    <p>All stakeholders access real-time shipment data via dashboard. Blockchain verification ensures authenticity.</p>
+                    <div class="step-tech">
+                        <span class="tech-badge">Live Dashboard</span>
+                        <span class="tech-badge">Multi-Party Access</span>
+                        <span class="tech-badge">Audit Trails</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Featured Games -->
-    <section class="games-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Featured Immutable Games</h2>
-                <p class="section-subtitle">Join 440+ games on the world's leading gaming blockchain</p>
+    <!-- Solana Benefits -->
+    <section class="solana-section">
+        <div class="section-header">
+            <h2 class="section-title">Why Solana for Nigerian Logistics?</h2>
+            <p class="section-subtitle">High-speed, low-cost blockchain perfect for real-time IoT tracking</p>
+        </div>
+
+        <div class="solana-benefits">
+            <div class="benefit-card">
+                <div class="benefit-stat">65,000 TPS</div>
+                <div class="benefit-label">Transaction Throughput</div>
+                <p>Handles IoT data from thousands of simultaneous shipments across Nigeria without congestion</p>
             </div>
 
-            <div class="games-grid">
-                <div class="game-card">
-                    <div class="game-banner gods-unchained"></div>
-                    <div class="game-content">
-                        <h3>Gods Unchained</h3>
-                        <p>Tactical card game where you truly own your cards. Compete, trade, and earn.</p>
-                        <div class="game-stats">
-                            <span>🎮 200K+ Players</span>
-                            <span>💎 5M+ Cards</span>
-                        </div>
-                        <button class="btn btn-secondary btn-block">Play Now</button>
-                    </div>
-                </div>
-                <div class="game-card">
-                    <div class="game-banner guild-guardians"></div>
-                    <div class="game-content">
-                        <h3>Guild of Guardians</h3>
-                        <p>Mobile RPG with play-to-earn mechanics. Build your guild, earn rewards.</p>
-                        <div class="game-stats">
-                            <span>🎮 300K+ Players</span>
-                            <span>💎 NFT Heroes</span>
-                        </div>
-                        <button class="btn btn-secondary btn-block">Play Now</button>
-                    </div>
-                </div>
-                <div class="game-card">
-                    <div class="game-banner illuvium"></div>
-                    <div class="game-content">
-                        <h3>Illuvium</h3>
-                        <p>Open-world RPG adventure. Capture, battle, and trade Illuvials as NFTs.</p>
-                        <div class="game-stats">
-                            <span>🎮 150K+ Players</span>
-                            <span>💎 Rare Illuvials</span>
-                        </div>
-                        <button class="btn btn-secondary btn-block">Play Now</button>
-                    </div>
-                </div>
+            <div class="benefit-card">
+                <div class="benefit-stat">400ms</div>
+                <div class="benefit-label">Block Time</div>
+                <p>Near-instant confirmation enables real-time tracking updates every 30 seconds</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-stat">$0.00003</div>
+                <div class="benefit-label">Average Fee</div>
+                <p>Negligible transaction costs make micro-updates economically viable (₦0.01 per record)</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-stat">PoH + PoS</div>
+                <div class="benefit-label">Consensus Model</div>
+                <p>Proof of History timestamps every IoT reading, ensuring tamper-proof chronological order</p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <div class="footer-brand">
-                        <svg class="logo" viewBox="0 0 40 40" fill="none">
-                            <rect width="40" height="40" rx="8" fill="url(#footerGradient)"/>
-                            <path d="M20 8L28 16L20 24L12 16L20 8Z" fill="white"/>
-                            <path d="M12 20L20 28L28 20" stroke="white" stroke-width="2" fill="none"/>
-                            <defs>
-                                <linearGradient id="footerGradient" x1="0" y1="0" x2="40" y2="40">
-                                    <stop offset="0%" stop-color="#7B3FF2"/>
-                                    <stop offset="100%" stop-color="#00D4FF"/>
-                                </linearGradient>
-                            </defs>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke-width="2"/>
                         </svg>
-                        <div>
-                            <h4>GameForge Academy</h4>
-                            <p>Learn. Play. Earn. Gas-Free.</p>
-                        </div>
                     </div>
-                    <div class="powered-by">
-                        <span>Powered by</span>
-                        <div class="immutable-badge">
-                            <span>Immutable zkEVM</span>
-                        </div>
-                    </div>
+                    <span>SwiftChain</span>
                 </div>
-                <div class="footer-col">
-                    <h5>Platform</h5>
-                    <a href="#">Quests</a>
-                    <a href="#">Marketplace</a>
-                    <a href="#">Academy</a>
-                    <a href="#">Leaderboard</a>
-                </div>
-                <div class="footer-col">
-                    <h5>Resources</h5>
-                    <a href="#">Immutable Docs</a>
-                    <a href="#">Passport Guide</a>
-                    <a href="#">Developer SDK</a>
-                    <a href="#">Support</a>
-                </div>
-                <div class="footer-col">
-                    <h5>Community</h5>
-                    <a href="#">Discord</a>
-                    <a href="#">Twitter</a>
-                    <a href="#">Blog</a>
-                    <a href="#">GitHub</a>
+                <p>Transforming Nigerian logistics with Solana blockchain technology. Real-time tracking, IoT integration, and transparent supply chains.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+                            <circle cx="4" cy="4" r="2"/>
+                        </svg>
+                    </a>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 GameForge Academy. Built on Immutable zkEVM.</p>
-                <div class="footer-features">
-                    <span>⚡ Gas-Free</span>
-                    <span>🔒 Secure</span>
-                    <span>🌐 Universal</span>
-                </div>
+
+            <div class="footer-column">
+                <h4>Solutions</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Port Logistics</a></li>
+                    <li><a href="#">Road Transport</a></li>
+                    <li><a href="#">Rail Freight</a></li>
+                    <li><a href="#">Warehousing</a></li>
+                    <li><a href="#">Last Mile</a></li>
+                </ul>
             </div>
+
+            <div class="footer-column">
+                <h4>Platform</h4>
+                <ul class="footer-links">
+                    <li><a href="#">IoT Sensors</a></li>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">API Docs</a></li>
+                    <li><a href="#">Integrations</a></li>
+                    <li><a href="#">Pricing</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul class="footer-links">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Case Studies</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 SwiftChain. Powered by Solana. Built for Nigerian logistics.</p>
         </div>
     </footer>
 
