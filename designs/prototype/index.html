@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameForge Academy - Learn, Play, Earn on Immutable</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <svg class="logo" viewBox="0 0 40 40" fill="none">
+                    <rect width="40" height="40" rx="8" fill="url(#logoGradient)"/>
+                    <path d="M20 8L28 16L20 24L12 16L20 8Z" fill="white"/>
+                    <path d="M12 20L20 28L28 20" stroke="white" stroke-width="2" fill="none"/>
+                    <defs>
+                        <linearGradient id="logoGradient" x1="0" y1="0" x2="40" y2="40">
+                            <stop offset="0%" stop-color="#7B3FF2"/>
+                            <stop offset="100%" stop-color="#00D4FF"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <div class="brand-text">
+                    <span class="brand-name">GameForge Academy</span>
+                    <span class="brand-tagline">Powered by Immutable zkEVM</span>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#quests" class="nav-link active">Quests</a></li>
+                <li><a href="#marketplace" class="nav-link">Marketplace</a></li>
+                <li><a href="#academy" class="nav-link">Academy</a></li>
+                <li><a href="#guild" class="nav-link">Guilds</a></li>
+                <li><a href="#leaderboard" class="nav-link">Leaderboard</a></li>
+            </ul>
+            <div class="nav-actions">
+                <div class="network-badge">
+                    <div class="status-dot"></div>
+                    <span>Gas-Free</span>
+                </div>
+                <button class="btn-passport">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2"/>
+                        <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2"/>
+                        <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    Connect Passport
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="particle-field"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                        <path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    440+ Games • 3.3M+ Players • 150M+ Transactions
+                </div>
+                <h1 class="hero-title">
+                    Learn Web3 Gaming,<br/>
+                    <span class="gradient-text">Earn NFT Rewards</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Master blockchain gaming through interactive quests, earn NFT badges, and trade on the world's largest gaming marketplace—all gas-free with Immutable Passport.
+                </p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M15 12H3" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        Start Learning (Gas-Free)
+                    </button>
+                    <button class="btn btn-secondary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                            <polygon points="10,8 16,12 10,16" fill="currentColor"/>
+                        </svg>
+                        Watch Demo
+                    </button>
+                </div>
+                <div class="passport-features">
+                    <div class="feature-chip">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 11l3 3L22 4" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        No Gas Fees
+                    </div>
+                    <div class="feature-chip">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <path d="M21 10H3M21 6H3M21 14H3M21 18H3" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        Google/Apple Login
+                    </div>
+                    <div class="feature-chip">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        Universal Profile
+                    </div>
+                    <div class="feature-chip">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <path d="M13 2L3 14h10l-1 8 10-12H12l1-8z" fill="currentColor"/>
+                        </svg>
+                        Pre-Approved TX
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="nft-showcase">
+                    <div class="nft-card floating">
+                        <div class="nft-image badge-1"></div>
+                        <div class="nft-info">
+                            <h4>Web3 Pioneer</h4>
+                            <p>Legendary Badge</p>
+                        </div>
+                    </div>
+                    <div class="nft-card floating delay-1">
+                        <div class="nft-image badge-2"></div>
+                        <div class="nft-info">
+                            <h4>Smart Contract Master</h4>
+                            <p>Epic Badge</p>
+                        </div>
+                    </div>
+                    <div class="nft-card floating delay-2">
+                        <div class="nft-image badge-3"></div>
+                        <div class="nft-info">
+                            <h4>NFT Collector</h4>
+                            <p>Rare Badge</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-icon">🎮</div>
+                    <div class="stat-content">
+                        <div class="stat-value">440+</div>
+                        <div class="stat-label">Games on Immutable</div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-content">
+                        <div class="stat-value">3.3M+</div>
+                        <div class="stat-label">Passport Users</div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">📦</div>
+                    <div class="stat-content">
+                        <div class="stat-value">150M+</div>
+                        <div class="stat-label">Transactions</div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">💎</div>
+                    <div class="stat-content">
+                        <div class="stat-value">5M+</div>
+                        <div class="stat-label">Active NFT Listings</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Quests -->
+    <section class="quests-section" id="quests">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Learning Quests</h2>
+                <p class="section-subtitle">Complete quests, earn NFT badges, level up your skills—all gas-free</p>
+                <div class="quest-filters">
+                    <button class="filter-btn active">All Quests</button>
+                    <button class="filter-btn">Beginner</button>
+                    <button class="filter-btn">Intermediate</button>
+                    <button class="filter-btn">Advanced</button>
+                    <button class="filter-btn">🔥 Trending</button>
+                </div>
+            </div>
+
+            <div class="quests-grid">
+                <!-- Quest Card 1 -->
+                <div class="quest-card featured">
+                    <div class="quest-badge hot">🔥 Trending</div>
+                    <div class="quest-header">
+                        <div class="quest-icon legendary"></div>
+                        <div class="quest-meta">
+                            <h3 class="quest-title">Immutable Passport Mastery</h3>
+                            <div class="quest-difficulty legendary">Beginner</div>
+                        </div>
+                    </div>
+                    <p class="quest-description">
+                        Learn how to use Immutable Passport for gas-free gaming. Connect with Google/Apple, explore pre-approved transactions, and claim your first NFT badge.
+                    </p>
+                    <div class="quest-rewards">
+                        <div class="reward-label">Rewards:</div>
+                        <div class="reward-items">
+                            <div class="reward-item">
+                                <div class="reward-nft passport-badge"></div>
+                                <span>Passport Pioneer NFT</span>
+                            </div>
+                            <div class="reward-item">
+                                <div class="reward-token">+500 XP</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quest-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 60%"></div>
+                        </div>
+                        <span class="progress-text">3/5 Tasks Complete</span>
+                    </div>
+                    <div class="quest-tasks">
+                        <div class="task-item completed">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="10" fill="#10B981" stroke="none"/>
+                                <path d="M8 12l3 3 5-5" stroke="white" stroke-width="2"/>
+                            </svg>
+                            <span>Create Immutable Passport</span>
+                        </div>
+                        <div class="task-item completed">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="10" fill="#10B981" stroke="none"/>
+                                <path d="M8 12l3 3 5-5" stroke="white" stroke-width="2"/>
+                            </svg>
+                            <span>Link Google/Apple Account</span>
+                        </div>
+                        <div class="task-item completed">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="10" fill="#10B981" stroke="none"/>
+                                <path d="M8 12l3 3 5-5" stroke="white" stroke-width="2"/>
+                            </svg>
+                            <span>Explore Gas-Free Features</span>
+                        </div>
+                        <div class="task-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <span>Test Pre-Approved Transaction</span>
+                        </div>
+                        <div class="task-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <span>Claim NFT Badge</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-block">Continue Quest</button>
+                </div>
+
+                <!-- Quest Card 2 -->
+                <div class="quest-card">
+                    <div class="quest-badge new">✨ New</div>
+                    <div class="quest-header">
+                        <div class="quest-icon epic"></div>
+                        <div class="quest-meta">
+                            <h3 class="quest-title">Global Orderbook Trading</h3>
+                            <div class="quest-difficulty epic">Intermediate</div>
+                        </div>
+                    </div>
+                    <p class="quest-description">
+                        Master cross-marketplace NFT trading using Immutable's Global Orderbook. Learn about shared liquidity and trade on multiple platforms.
+                    </p>
+                    <div class="quest-rewards">
+                        <div class="reward-label">Rewards:</div>
+                        <div class="reward-items">
+                            <div class="reward-item">
+                                <div class="reward-nft trader-badge"></div>
+                                <span>Master Trader NFT</span>
+                            </div>
+                            <div class="reward-item">
+                                <div class="reward-token">+800 XP</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quest-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-text">0/4 Tasks Complete</span>
+                    </div>
+                    <div class="quest-tasks">
+                        <div class="task-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <span>List NFT on TokenTrove</span>
+                        </div>
+                        <div class="task-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <span>View listing on AtomicHub</span>
+                        </div>
+                        <div class="task-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <span>Complete cross-marketplace trade</span>
+                        </div>
+                        <div class="task-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <span>Earn trading fees</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-block">Start Quest</button>
+                </div>
+
+                <!-- Quest Card 3 -->
+                <div class="quest-card">
+                    <div class="quest-badge">🎯 Popular</div>
+                    <div class="quest-header">
+                        <div class="quest-icon rare"></div>
+                        <div class="quest-meta">
+                            <h3 class="quest-title">NFT Game Development 101</h3>
+                            <div class="quest-difficulty rare">Advanced</div>
+                        </div>
+                    </div>
+                    <p class="quest-description">
+                        Build your first NFT game on Immutable zkEVM. Learn smart contracts, in-game marketplace integration, and royalty enforcement.
+                    </p>
+                    <div class="quest-rewards">
+                        <div class="reward-label">Rewards:</div>
+                        <div class="reward-items">
+                            <div class="reward-item">
+                                <div class="reward-nft developer-badge"></div>
+                                <span>Game Developer NFT</span>
+                            </div>
+                            <div class="reward-item">
+                                <div class="reward-token">+1500 XP</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quest-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 25%"></div>
+                        </div>
+                        <span class="progress-text">2/8 Tasks Complete</span>
+                    </div>
+                    <button class="btn btn-primary btn-block">Continue Quest</button>
+                </div>
+
+                <!-- Quest Card 4 -->
+                <div class="quest-card">
+                    <div class="quest-header">
+                        <div class="quest-icon common"></div>
+                        <div class="quest-meta">
+                            <h3 class="quest-title">Play Gods Unchained</h3>
+                            <div class="quest-difficulty common">Beginner</div>
+                        </div>
+                    </div>
+                    <p class="quest-description">
+                        Explore one of Immutable's flagship games. Learn about play-to-earn mechanics, card NFTs, and competitive gaming.
+                    </p>
+                    <div class="quest-rewards">
+                        <div class="reward-label">Rewards:</div>
+                        <div class="reward-items">
+                            <div class="reward-item">
+                                <div class="reward-nft gods-badge"></div>
+                                <span>Gods Player NFT</span>
+                            </div>
+                            <div class="reward-item">
+                                <div class="reward-token">+300 XP</div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-block">Start Quest</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Orderbook Marketplace -->
+    <section class="marketplace-section" id="marketplace">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Global Orderbook Marketplace</h2>
+                <p class="section-subtitle">20M+ orders • 5M+ listings • Shared liquidity across all Immutable marketplaces</p>
+            </div>
+
+            <div class="orderbook-features">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="2"/>
+                            <path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>Shared Liquidity</h3>
+                    <p>List once, sell anywhere. Orders are visible on TokenTrove, AtomicHub, Sphere, and all partner marketplaces.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <rect x="3" y="3" width="7" height="7" stroke="currentColor" stroke-width="2"/>
+                            <rect x="14" y="3" width="7" height="7" stroke="currentColor" stroke-width="2"/>
+                            <rect x="3" y="14" width="7" height="7" stroke="currentColor" stroke-width="2"/>
+                            <rect x="14" y="14" width="7" height="7" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>Cross-Marketplace</h3>
+                    <p>50%+ of trades settle on non-origin marketplaces thanks to global orderbook infrastructure.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M12 2v20M2 12h20" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>Royalty Protection</h3>
+                    <p>First EVM chain with enforceable royalty fees, ensuring creators get paid on every trade.</p>
+                </div>
+            </div>
+
+            <div class="marketplace-grid">
+                <div class="nft-listing featured">
+                    <div class="listing-badge">Featured</div>
+                    <div class="listing-image legendary-sword"></div>
+                    <div class="listing-content">
+                        <div class="listing-game">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Crect fill='%237B3FF2' width='20' height='20'/%3E%3C/svg%3E" alt="Gods Unchained" class="game-icon">
+                            <span>Gods Unchained</span>
+                        </div>
+                        <h3 class="listing-title">Legendary Sword of Light</h3>
+                        <div class="listing-rarity legendary">Legendary</div>
+                        <div class="listing-stats">
+                            <div class="stat">
+                                <span class="label">Attack</span>
+                                <span class="value">+150</span>
+                            </div>
+                            <div class="stat">
+                                <span class="label">Power</span>
+                                <span class="value">98/100</span>
+                            </div>
+                        </div>
+                        <div class="listing-price">
+                            <div class="price-section">
+                                <span class="price-label">Price</span>
+                                <span class="price-value">2.5 ETH</span>
+                                <span class="price-usd">$4,250</span>
+                            </div>
+                            <div class="marketplace-icons">
+                                <div class="marketplace-tag" title="Listed on TokenTrove">TT</div>
+                                <div class="marketplace-tag" title="Listed on AtomicHub">AH</div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-block">Buy Now (Gas-Free)</button>
+                    </div>
+                </div>
+
+                <div class="nft-listing">
+                    <div class="listing-image epic-character"></div>
+                    <div class="listing-content">
+                        <div class="listing-game">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Crect fill='%2300D4FF' width='20' height='20'/%3E%3C/svg%3E" alt="Guild of Guardians" class="game-icon">
+                            <span>Guild of Guardians</span>
+                        </div>
+                        <h3 class="listing-title">Epic Guardian Hero</h3>
+                        <div class="listing-rarity epic">Epic</div>
+                        <div class="listing-price">
+                            <div class="price-section">
+                                <span class="price-label">Price</span>
+                                <span class="price-value">0.8 ETH</span>
+                                <span class="price-usd">$1,360</span>
+                            </div>
+                            <div class="marketplace-icons">
+                                <div class="marketplace-tag">TT</div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-block">Buy Now (Gas-Free)</button>
+                    </div>
+                </div>
+
+                <div class="nft-listing">
+                    <div class="listing-image rare-pet"></div>
+                    <div class="listing-content">
+                        <div class="listing-game">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Crect fill='%23FF6B9D' width='20' height='20'/%3E%3C/svg%3E" alt="Illuvium" class="game-icon">
+                            <span>Illuvium</span>
+                        </div>
+                        <h3 class="listing-title">Rare Illuvial Companion</h3>
+                        <div class="listing-rarity rare">Rare</div>
+                        <div class="listing-price">
+                            <div class="price-section">
+                                <span class="price-label">Price</span>
+                                <span class="price-value">0.3 ETH</span>
+                                <span class="price-usd">$510</span>
+                            </div>
+                            <div class="marketplace-icons">
+                                <div class="marketplace-tag">AH</div>
+                                <div class="marketplace-tag">SP</div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-block">Buy Now (Gas-Free)</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Immutable Passport Info -->
+    <section class="passport-section">
+        <div class="container">
+            <div class="passport-grid">
+                <div class="passport-visual">
+                    <div class="passport-card">
+                        <div class="passport-header">
+                            <h3>Immutable Passport</h3>
+                            <div class="passport-badge">Verified</div>
+                        </div>
+                        <div class="passport-avatar"></div>
+                        <div class="passport-info">
+                            <h4>Alex_Gamer_42</h4>
+                            <p>Level 15 • 2,450 XP</p>
+                        </div>
+                        <div class="passport-stats">
+                            <div class="stat-box">
+                                <span class="stat-number">23</span>
+                                <span class="stat-label">NFTs Owned</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-number">8</span>
+                                <span class="stat-label">Games Played</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-number">156</span>
+                                <span class="stat-label">Quests Done</span>
+                            </div>
+                        </div>
+                        <div class="passport-badges-mini">
+                            <div class="mini-badge" title="Web3 Pioneer"></div>
+                            <div class="mini-badge" title="Master Trader"></div>
+                            <div class="mini-badge" title="Game Developer"></div>
+                            <div class="mini-badge more">+12</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="passport-content">
+                    <h2>Your Universal Gaming Profile</h2>
+                    <p class="lead">One identity across 440+ games. 3.3M+ users already gaming gas-free.</p>
+                    <div class="passport-features-list">
+                        <div class="feature-item">
+                            <div class="feature-icon-small">✓</div>
+                            <div>
+                                <h4>Passwordless Sign-On</h4>
+                                <p>Login with Google, Apple, or email. No seed phrases to remember.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon-small">✓</div>
+                            <div>
+                                <h4>Gas-Free Gaming</h4>
+                                <p>Zero transaction fees for all in-game actions. Play without blockchain friction.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon-small">✓</div>
+                            <div>
+                                <h4>Pre-Approved Transactions</h4>
+                                <p>Mint, craft, and trade without wallet pop-ups. Seamless gaming experience.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon-small">✓</div>
+                            <div>
+                                <h4>Universal Identity</h4>
+                                <p>Your profile, assets, and achievements work across all Immutable games.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-large">Create Your Passport</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Games -->
+    <section class="games-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Immutable Games</h2>
+                <p class="section-subtitle">Join 440+ games on the world's leading gaming blockchain</p>
+            </div>
+
+            <div class="games-grid">
+                <div class="game-card">
+                    <div class="game-banner gods-unchained"></div>
+                    <div class="game-content">
+                        <h3>Gods Unchained</h3>
+                        <p>Tactical card game where you truly own your cards. Compete, trade, and earn.</p>
+                        <div class="game-stats">
+                            <span>🎮 200K+ Players</span>
+                            <span>💎 5M+ Cards</span>
+                        </div>
+                        <button class="btn btn-secondary btn-block">Play Now</button>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="game-banner guild-guardians"></div>
+                    <div class="game-content">
+                        <h3>Guild of Guardians</h3>
+                        <p>Mobile RPG with play-to-earn mechanics. Build your guild, earn rewards.</p>
+                        <div class="game-stats">
+                            <span>🎮 300K+ Players</span>
+                            <span>💎 NFT Heroes</span>
+                        </div>
+                        <button class="btn btn-secondary btn-block">Play Now</button>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="game-banner illuvium"></div>
+                    <div class="game-content">
+                        <h3>Illuvium</h3>
+                        <p>Open-world RPG adventure. Capture, battle, and trade Illuvials as NFTs.</p>
+                        <div class="game-stats">
+                            <span>🎮 150K+ Players</span>
+                            <span>💎 Rare Illuvials</span>
+                        </div>
+                        <button class="btn btn-secondary btn-block">Play Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">
+                        <svg class="logo" viewBox="0 0 40 40" fill="none">
+                            <rect width="40" height="40" rx="8" fill="url(#footerGradient)"/>
+                            <path d="M20 8L28 16L20 24L12 16L20 8Z" fill="white"/>
+                            <path d="M12 20L20 28L28 20" stroke="white" stroke-width="2" fill="none"/>
+                            <defs>
+                                <linearGradient id="footerGradient" x1="0" y1="0" x2="40" y2="40">
+                                    <stop offset="0%" stop-color="#7B3FF2"/>
+                                    <stop offset="100%" stop-color="#00D4FF"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <div>
+                            <h4>GameForge Academy</h4>
+                            <p>Learn. Play. Earn. Gas-Free.</p>
+                        </div>
+                    </div>
+                    <div class="powered-by">
+                        <span>Powered by</span>
+                        <div class="immutable-badge">
+                            <span>Immutable zkEVM</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h5>Platform</h5>
+                    <a href="#">Quests</a>
+                    <a href="#">Marketplace</a>
+                    <a href="#">Academy</a>
+                    <a href="#">Leaderboard</a>
+                </div>
+                <div class="footer-col">
+                    <h5>Resources</h5>
+                    <a href="#">Immutable Docs</a>
+                    <a href="#">Passport Guide</a>
+                    <a href="#">Developer SDK</a>
+                    <a href="#">Support</a>
+                </div>
+                <div class="footer-col">
+                    <h5>Community</h5>
+                    <a href="#">Discord</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">Blog</a>
+                    <a href="#">GitHub</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 GameForge Academy. Built on Immutable zkEVM.</p>
+                <div class="footer-features">
+                    <span>⚡ Gas-Free</span>
+                    <span>🔒 Secure</span>
+                    <span>🌐 Universal</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
