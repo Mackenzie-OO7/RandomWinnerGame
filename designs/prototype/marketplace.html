@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Panel Marketplace - Helios Ten-Chi</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body { background: #0F1419; color: white; font-family: 'Inter', sans-serif; margin: 0; }
+        .marketplace-nav { background: rgba(15, 20, 25, 0.95); backdrop-filter: blur(20px); padding: 1rem 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { display: flex; align-items: center; gap: 0.75rem; font-weight: 700; font-size: 1.25rem; color: white; text-decoration: none; }
+        .nav-logo svg { width: 32px; height: 32px; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0; }
+        .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: #FDB813; }
+        .marketplace-container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+        .page-header { margin-bottom: 2rem; }
+        .page-header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .page-header p { color: rgba(255,255,255,0.6); font-size: 1.125rem; }
+        .filters { display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; }
+        .filter-btn { padding: 0.75rem 1.5rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 2rem; color: white; cursor: pointer; transition: all 0.3s; }
+        .filter-btn:hover, .filter-btn.active { background: rgba(253,184,19,0.2); border-color: #FDB813; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; }
+        .product-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 1rem; overflow: hidden; transition: all 0.3s; cursor: pointer; }
+        .product-card:hover { transform: translateY(-8px); border-color: rgba(253,184,19,0.3); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+        .product-image { width: 100%; height: 200px; background: linear-gradient(135deg, #FDB813, #FF6B35); display: flex; align-items: center; justify-content: center; font-size: 4rem; }
+        .product-details { padding: 1.5rem; }
+        .product-badge { display: inline-block; padding: 0.25rem 0.75rem; background: rgba(16,185,129,0.2); border: 1px solid rgba(16,185,129,0.3); border-radius: 1rem; font-size: 0.75rem; color: #10B981; margin-bottom: 0.75rem; }
+        .product-title { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem; }
+        .product-specs { display: flex; flex-direction: column; gap: 0.5rem; margin: 1rem 0; color: rgba(255,255,255,0.6); font-size: 0.875rem; }
+        .spec-item { display: flex; justify-content: space-between; }
+        .product-price { display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem; }
+        .price-value { font-size: 1.5rem; font-weight: 700; color: #FDB813; }
+        .buy-btn { padding: 0.75rem 1.5rem; background: linear-gradient(135deg, #FDB813, #FF6B35); border: none; border-radius: 0.5rem; color: white; font-weight: 600; cursor: pointer; transition: all 0.3s; }
+        .buy-btn:hover { transform: scale(1.05); box-shadow: 0 8px 20px rgba(253,184,19,0.4); }
+        @media (max-width: 1024px) { .nav-links { display: none; } .product-grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); } }
+    </style>
+</head>
+<body>
+    <nav class="marketplace-nav">
+        <a href="dashboard.html" class="nav-logo">
+            <svg viewBox="0 0 40 40" fill="none">
+                <circle cx="20" cy="20" r="18" stroke="url(#g1)" stroke-width="2"/>
+                <path d="M20 8L23 17H32L25 22L28 31L20 26L12 31L15 22L8 17H17L20 8Z" fill="url(#g1)"/>
+                <defs><linearGradient id="g1" x1="0" y1="0" x2="40" y2="40"><stop offset="0%" stop-color="#FDB813"/><stop offset="100%" stop-color="#FF6B35"/></linearGradient></defs>
+            </svg>
+            <span>Helios Ten-Chi</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="marketplace.html" class="active">Marketplace</a></li>
+            <li><a href="trading.html">Trading</a></li>
+            <li><a href="credits.html">Solar Credits</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+    </nav>
+
+    <div class="marketplace-container">
+        <div class="page-header">
+            <h1>Solar Panel Marketplace</h1>
+            <p>Browse and purchase verified solar panels from trusted manufacturers</p>
+        </div>
+
+        <div class="filters">
+            <button class="filter-btn active">All Panels</button>
+            <button class="filter-btn">Residential</button>
+            <button class="filter-btn">Commercial</button>
+            <button class="filter-btn">Industrial</button>
+            <button class="filter-btn">Certified Only</button>
+        </div>
+
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-image">☀️</div>
+                <div class="product-details">
+                    <span class="product-badge">✓ Verified</span>
+                    <h3 class="product-title">SolarTech Pro 400W</h3>
+                    <div class="product-specs">
+                        <div class="spec-item"><span>Power Output:</span><strong>400W</strong></div>
+                        <div class="spec-item"><span>Efficiency:</span><strong>21.5%</strong></div>
+                        <div class="spec-item"><span>Warranty:</span><strong>25 years</strong></div>
+                        <div class="spec-item"><span>Seller:</span><strong>SolarTech Inc.</strong></div>
+                    </div>
+                    <div class="product-price">
+                        <span class="price-value">450 XLM</span>
+                        <button class="buy-btn">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">⚡</div>
+                <div class="product-details">
+                    <span class="product-badge">✓ Verified</span>
+                    <h3 class="product-title">EcoPanel Max 500W</h3>
+                    <div class="product-specs">
+                        <div class="spec-item"><span>Power Output:</span><strong>500W</strong></div>
+                        <div class="spec-item"><span>Efficiency:</span><strong>22.8%</strong></div>
+                        <div class="spec-item"><span>Warranty:</span><strong>30 years</strong></div>
+                        <div class="spec-item"><span>Seller:</span><strong>GreenTech Solar</strong></div>
+                    </div>
+                    <div class="product-price">
+                        <span class="price-value">580 XLM</span>
+                        <button class="buy-btn">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">🔆</div>
+                <div class="product-details">
+                    <span class="product-badge">✓ Verified</span>
+                    <h3 class="product-title">PowerSun 350W</h3>
+                    <div class="product-specs">
+                        <div class="spec-item"><span>Power Output:</span><strong>350W</strong></div>
+                        <div class="spec-item"><span>Efficiency:</span><strong>20.2%</strong></div>
+                        <div class="spec-item"><span>Warranty:</span><strong>20 years</strong></div>
+                        <div class="spec-item"><span>Seller:</span><strong>SunPower Global</strong></div>
+                    </div>
+                    <div class="product-price">
+                        <span class="price-value">380 XLM</span>
+                        <button class="buy-btn">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">💡</div>
+                <div class="product-details">
+                    <span class="product-badge">✓ Verified</span>
+                    <h3 class="product-title">Commercial Array 10kW</h3>
+                    <div class="product-specs">
+                        <div class="spec-item"><span>Power Output:</span><strong>10kW</strong></div>
+                        <div class="spec-item"><span>Efficiency:</span><strong>23.1%</strong></div>
+                        <div class="spec-item"><span>Warranty:</span><strong>25 years</strong></div>
+                        <div class="spec-item"><span>Seller:</span><strong>MegaSolar Corp</strong></div>
+                    </div>
+                    <div class="product-price">
+                        <span class="price-value">8,500 XLM</span>
+                        <button class="buy-btn">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">🌞</div>
+                <div class="product-details">
+                    <span class="product-badge">✓ Verified</span>
+                    <h3 class="product-title">Residential Starter 3kW</h3>
+                    <div class="product-specs">
+                        <div class="spec-item"><span>Power Output:</span><strong>3kW</strong></div>
+                        <div class="spec-item"><span>Efficiency:</span><strong>19.8%</strong></div>
+                        <div class="spec-item"><span>Warranty:</span><strong>15 years</strong></div>
+                        <div class="spec-item"><span>Seller:</span><strong>HomeSolar</strong></div>
+                    </div>
+                    <div class="product-price">
+                        <span class="price-value">2,400 XLM</span>
+                        <button class="buy-btn">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">⭐</div>
+                <div class="product-details">
+                    <span class="product-badge">✓ Verified</span>
+                    <h3 class="product-title">Premium 600W HiEff</h3>
+                    <div class="product-specs">
+                        <div class="spec-item"><span>Power Output:</span><strong>600W</strong></div>
+                        <div class="spec-item"><span>Efficiency:</span><strong>24.2%</strong></div>
+                        <div class="spec-item"><span>Warranty:</span><strong>35 years</strong></div>
+                        <div class="spec-item"><span>Seller:</span><strong>EliteSolar Tech</strong></div>
+                    </div>
+                    <div class="product-price">
+                        <span class="price-value">750 XLM</span>
+                        <button class="buy-btn">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Filter functionality
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Buy button functionality
+        document.querySelectorAll('.buy-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const productName = this.closest('.product-card').querySelector('.product-title').textContent;
+                const price = this.closest('.product-price').querySelector('.price-value').textContent;
+                if (confirm(`Purchase ${productName} for ${price}?`)) {
+                    alert('Processing transaction on Stellar network...\nTransaction settled in 3-5 seconds! ✓');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

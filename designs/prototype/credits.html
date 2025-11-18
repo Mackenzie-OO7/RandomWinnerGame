@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Credits - Helios Ten-Chi</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body{background:#0F1419;color:#fff;font-family:'Inter',sans-serif;margin:0}.nav{background:rgba(15,20,25,.95);backdrop-filter:blur(20px);padding:1rem 2rem;border-bottom:1px solid rgba(255,255,255,.1);position:sticky;top:0;z-index:100;display:flex;justify-content:space-between;align-items:center}.nav-logo{display:flex;align-items:center;gap:.75rem;font-weight:700;font-size:1.25rem;color:#fff;text-decoration:none}.nav-logo svg{width:32px;height:32px}.nav-links{display:flex;gap:2rem;list-style:none;margin:0;padding:0}.nav-links a{color:rgba(255,255,255,.7);text-decoration:none;transition:color .3s}.nav-links a:hover,.nav-links a.active{color:#FDB813}.container{max-width:1400px;margin:0 auto;padding:2rem}.credits-hero{background:linear-gradient(135deg,rgba(253,184,19,.2),rgba(255,107,53,.2));border-radius:1rem;padding:3rem;text-align:center;margin-bottom:2rem}.credits-hero h1{font-size:3rem;margin-bottom:1rem}.credits-balance{font-size:4rem;font-weight:700;color:#FDB813;margin:1.5rem 0}.cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}.card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:1rem;padding:1.5rem;transition:all .3s}.card:hover{background:rgba(255,255,255,.08);border-color:rgba(253,184,19,.3);transform:translateY(-4px)}.card-title{font-size:1.25rem;font-weight:600;margin-bottom:1rem}.transaction-item{display:flex;justify-content:space-between;padding:.875rem;background:rgba(255,255,255,.03);border-radius:.5rem;margin-bottom:.75rem}.transaction-icon{width:40px;height:40px;border-radius:.5rem;background:linear-gradient(135deg,#FDB813,#FF6B35);display:flex;align-items:center;justify-content:center;font-size:1.25rem;margin-right:1rem}.transaction-details{flex:1}.transaction-details h4{margin:0 0 .25rem;font-size:.875rem}.transaction-details p{margin:0;font-size:.75rem;color:rgba(255,255,255,.5)}.transaction-amount{font-weight:600;color:#10B981}.transaction-amount.negative{color:#EF4444}@media(max-width:1024px){.nav-links{display:none}.credits-hero h1{font-size:2rem}.credits-balance{font-size:3rem}}
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="dashboard.html" class="nav-logo">
+            <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" stroke="url(#g1)" stroke-width="2"/><path d="M20 8L23 17H32L25 22L28 31L20 26L12 31L15 22L8 17H17L20 8Z" fill="url(#g1)"/><defs><linearGradient id="g1" x1="0" y1="0" x2="40" y2="40"><stop offset="0%" stop-color="#FDB813"/><stop offset="100%" stop-color="#FF6B35"/></linearGradient></defs></svg>
+            <span>Helios Ten-Chi</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="marketplace.html">Marketplace</a></li>
+            <li><a href="trading.html">Trading</a></li>
+            <li><a href="credits.html" class="active">Solar Credits</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="credits-hero">
+            <h1>Your Solar Credits</h1>
+            <p style="color:rgba(255,255,255,.7);font-size:1.125rem">Earned from verified solar energy production</p>
+            <div class="credits-balance">2,847 XLM</div>
+            <div style="display:flex;gap:1rem;justify-content:center;margin-top:2rem">
+                <button style="padding:1rem 2rem;background:linear-gradient(135deg,#FDB813,#FF6B35);border:none;border-radius:.5rem;color:#fff;font-weight:600;cursor:pointer">Withdraw</button>
+                <button style="padding:1rem 2rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.2);border-radius:.5rem;color:#fff;font-weight:600;cursor:pointer">Trade Credits</button>
+            </div>
+        </div>
+
+        <div class="cards-grid">
+            <div class="card">
+                <h2 class="card-title">Recent Transactions</h2>
+                <div class="transaction-item"><div style="display:flex;align-items:center"><div class="transaction-icon">⚡</div><div class="transaction-details"><h4>Energy Sale</h4><p>2 hours ago</p></div></div><div class="transaction-amount">+145 XLM</div></div>
+                <div class="transaction-item"><div style="display:flex;align-items:center"><div class="transaction-icon">🔋</div><div class="transaction-details"><h4>Credits Purchase</h4><p>5 hours ago</p></div></div><div class="transaction-amount negative">-89 XLM</div></div>
+                <div class="transaction-item"><div style="display:flex;align-items:center"><div class="transaction-icon">💱</div><div class="transaction-details"><h4>Trade Executed</h4><p>1 day ago</p></div></div><div class="transaction-amount">+144 XLM</div></div>
+                <div class="transaction-item"><div style="display:flex;align-items:center"><div class="transaction-icon">☀️</div><div class="transaction-details"><h4>Panel Reward</h4><p>2 days ago</p></div></div><div class="transaction-amount">+250 XLM</div></div>
+            </div>
+
+            <div class="card">
+                <h2 class="card-title">Credit Statistics</h2>
+                <div style="display:flex;flex-direction:column;gap:1.5rem;margin-top:1rem">
+                    <div><div style="color:rgba(255,255,255,.6);font-size:.875rem;margin-bottom:.5rem">Total Earned (All Time)</div><div style="font-size:1.5rem;font-weight:700">5,642 XLM</div></div>
+                    <div><div style="color:rgba(255,255,255,.6);font-size:.875rem;margin-bottom:.5rem">This Month</div><div style="font-size:1.5rem;font-weight:700">847 XLM</div></div>
+                    <div><div style="color:rgba(255,255,255,.6);font-size:.875rem;margin-bottom:.5rem">Average Daily</div><div style="font-size:1.5rem;font-weight:700">28 XLM</div></div>
+                    <div><div style="color:rgba(255,255,255,.6);font-size:.875rem;margin-bottom:.5rem">Energy Generated</div><div style="font-size:1.5rem;font-weight:700">12,458 kWh</div></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2 class="card-title">Credit Sources</h2>
+                <div style="margin-top:1rem">
+                    <div style="margin-bottom:1.5rem"><div style="display:flex;justify-content:space-between;margin-bottom:.5rem"><span>Panel Production</span><strong>65%</strong></div><div style="height:8px;background:rgba(255,255,255,.1);border-radius:1rem;overflow:hidden"><div style="height:100%;width:65%;background:linear-gradient(90deg,#FDB813,#FF6B35)"></div></div></div>
+                    <div style="margin-bottom:1.5rem"><div style="display:flex;justify-content:space-between;margin-bottom:.5rem"><span>Trading Profits</span><strong>25%</strong></div><div style="height:8px;background:rgba(255,255,255,.1);border-radius:1rem;overflow:hidden"><div style="height:100%;width:25%;background:linear-gradient(90deg,#10B981,#059669)"></div></div></div>
+                    <div><div style="display:flex;justify-content:space-between;margin-bottom:.5rem"><span>Referral Bonuses</span><strong>10%</strong></div><div style="height:8px;background:rgba(255,255,255,.1);border-radius:1rem;overflow:hidden"><div style="height:100%;width:10%;background:linear-gradient(90deg,#00D4FF,#0099CC)"></div></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

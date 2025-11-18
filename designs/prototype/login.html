@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - Helios Ten-Chi</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .auth-container {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: var(--bg-primary, #0F1419);
+        }
+
+        .auth-left {
+            background: linear-gradient(135deg, #FDB813 0%, #FF6B35 100%);
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .auth-left::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: rotate 30s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .auth-branding {
+            position: relative;
+            z-index: 2;
+        }
+
+        .auth-logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .auth-logo svg {
+            width: 48px;
+            height: 48px;
+        }
+
+        .auth-logo-text {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .auth-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .auth-hero-content h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .auth-hero-content p {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            max-width: 500px;
+        }
+
+        .auth-features {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .auth-feature {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: white;
+        }
+
+        .auth-feature svg {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+        }
+
+        .auth-feature span {
+            font-size: 1rem;
+            opacity: 0.95;
+        }
+
+        .auth-right {
+            padding: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-primary, #0F1419);
+        }
+
+        .auth-form-container {
+            width: 100%;
+            max-width: 450px;
+        }
+
+        .auth-form-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .auth-form-header h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .auth-form-header p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1rem;
+        }
+
+        .auth-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.25rem;
+            border-radius: 0.75rem;
+        }
+
+        .auth-tab {
+            flex: 1;
+            padding: 0.75rem 1.5rem;
+            background: transparent;
+            border: none;
+            border-radius: 0.5rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .auth-tab.active {
+            background: linear-gradient(135deg, #FDB813, #FF6B35);
+            color: white;
+            box-shadow: 0 4px 15px rgba(253, 184, 19, 0.3);
+        }
+
+        .auth-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-label {
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+            font-size: 0.875rem;
+        }
+
+        .form-input {
+            padding: 0.875rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0.5rem;
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #FDB813;
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 0 3px rgba(253, 184, 19, 0.1);
+        }
+
+        .form-input::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .form-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .form-checkbox input {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .form-checkbox label {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.875rem;
+            cursor: pointer;
+        }
+
+        .form-link {
+            color: #FDB813;
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: opacity 0.3s;
+        }
+
+        .form-link:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        .auth-submit {
+            padding: 1rem;
+            background: linear-gradient(135deg, #FDB813, #FF6B35);
+            border: none;
+            border-radius: 0.5rem;
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(253, 184, 19, 0.3);
+        }
+
+        .auth-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(253, 184, 19, 0.4);
+        }
+
+        .auth-divider {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1.5rem 0;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.875rem;
+        }
+
+        .auth-divider::before,
+        .auth-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .wallet-connect-btn {
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 0.5rem;
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .wallet-connect-btn:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .wallet-connect-btn svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .social-login {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .social-btn {
+            padding: 0.875rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0.5rem;
+            color: white;
+            font-weight: 500;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .social-btn:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .social-btn svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        @media (max-width: 1024px) {
+            .auth-container {
+                grid-template-columns: 1fr;
+            }
+
+            .auth-left {
+                display: none;
+            }
+
+            .auth-right {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .auth-form-header h2 {
+                font-size: 1.5rem;
+            }
+
+            .social-login {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <!-- Left Side - Branding -->
+        <div class="auth-left">
+            <div class="auth-branding">
+                <div class="auth-logo">
+                    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="20" cy="20" r="18" stroke="white" stroke-width="2" opacity="0.5"/>
+                        <path d="M20 8L23 17H32L25 22L28 31L20 26L12 31L15 22L8 17H17L20 8Z" fill="white"/>
+                    </svg>
+                    <span class="auth-logo-text">Helios Ten-Chi</span>
+                </div>
+            </div>
+
+            <div class="auth-hero-content">
+                <h1>Trade Solar<br/>Energy on<br/>Stellar</h1>
+                <p>Join the renewable energy revolution. Buy, sell, and trade solar credits with zero friction on the Stellar blockchain.</p>
+            </div>
+
+            <div class="auth-features">
+                <div class="auth-feature">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M9 11l3 3L22 4" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span>Near-instant transactions (3-5 seconds)</span>
+                </div>
+                <div class="auth-feature">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M9 11l3 3L22 4" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span>Minimal fees (~$0.00001 per transaction)</span>
+                </div>
+                <div class="auth-feature">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M9 11l3 3L22 4" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span>Verified solar panels & producers</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side - Form -->
+        <div class="auth-right">
+            <div class="auth-form-container">
+                <div class="auth-form-header">
+                    <h2>Welcome Back</h2>
+                    <p>Sign in to your account or create a new one</p>
+                </div>
+
+                <!-- Tabs -->
+                <div class="auth-tabs">
+                    <button class="auth-tab active" onclick="switchTab('signin')">Sign In</button>
+                    <button class="auth-tab" onclick="switchTab('signup')">Sign Up</button>
+                </div>
+
+                <!-- Sign In Form -->
+                <form class="auth-form" id="signin-form">
+                    <div class="form-group">
+                        <label class="form-label" for="email">Email Address</label>
+                        <input type="email" id="email" class="form-input" placeholder="your@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="password">Password</label>
+                        <input type="password" id="password" class="form-input" placeholder="••••••••" required>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="remember">
+                            <label for="remember">Remember me</label>
+                        </div>
+                        <a href="#" class="form-link">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="auth-submit">Sign In</button>
+                </form>
+
+                <!-- Sign Up Form (Hidden) -->
+                <form class="auth-form" id="signup-form" style="display: none;">
+                    <div class="form-group">
+                        <label class="form-label" for="signup-name">Full Name</label>
+                        <input type="text" id="signup-name" class="form-input" placeholder="John Doe" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="signup-email">Email Address</label>
+                        <input type="email" id="signup-email" class="form-input" placeholder="your@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="signup-password">Password</label>
+                        <input type="password" id="signup-password" class="form-input" placeholder="••••••••" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="signup-confirm">Confirm Password</label>
+                        <input type="password" id="signup-confirm" class="form-input" placeholder="••••••••" required>
+                    </div>
+
+                    <div class="form-checkbox">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms">I agree to the Terms of Service and Privacy Policy</label>
+                    </div>
+
+                    <button type="submit" class="auth-submit">Create Account</button>
+                </form>
+
+                <!-- Divider -->
+                <div class="auth-divider">
+                    <span>or continue with</span>
+                </div>
+
+                <!-- Wallet Connect -->
+                <button class="wallet-connect-btn" onclick="window.location.href='dashboard.html'">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M21 18V19C21 20.1 20.1 21 19 21H5C3.89 21 3 20.1 3 19V5C3 3.9 3.89 3 5 3H19C20.1 3 21 3.9 21 5V6H12C10.89 6 10 6.9 10 8V16C10 17.1 10.89 18 12 18H21ZM12 16H22V8H12V16ZM16 13.5C15.17 13.5 14.5 12.83 14.5 12C14.5 11.17 15.17 10.5 16 10.5C16.83 10.5 17.5 11.17 17.5 12C17.5 12.83 16.83 13.5 16 13.5Z" fill="currentColor"/>
+                    </svg>
+                    Connect Stellar Wallet
+                </button>
+
+                <!-- Social Login -->
+                <div class="social-login">
+                    <button class="social-btn">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                        </svg>
+                        Google
+                    </button>
+                    <button class="social-btn">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"/>
+                        </svg>
+                        Facebook
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(tab) {
+            const signinForm = document.getElementById('signin-form');
+            const signupForm = document.getElementById('signup-form');
+            const tabs = document.querySelectorAll('.auth-tab');
+
+            tabs.forEach((t, index) => {
+                if ((tab === 'signin' && index === 0) || (tab === 'signup' && index === 1)) {
+                    t.classList.add('active');
+                } else {
+                    t.classList.remove('active');
+                }
+            });
+
+            if (tab === 'signin') {
+                signinForm.style.display = 'flex';
+                signupForm.style.display = 'none';
+            } else {
+                signinForm.style.display = 'none';
+                signupForm.style.display = 'flex';
+            }
+        }
+
+        // Form submission handlers
+        document.getElementById('signin-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Simulate sign in
+            setTimeout(() => {
+                window.location.href = 'dashboard.html';
+            }, 1000);
+        });
+
+        document.getElementById('signup-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const password = document.getElementById('signup-password').value;
+            const confirm = document.getElementById('signup-confirm').value;
+
+            if (password !== confirm) {
+                alert('Passwords do not match!');
+                return;
+            }
+
+            // Simulate sign up
+            setTimeout(() => {
+                window.location.href = 'dashboard.html';
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

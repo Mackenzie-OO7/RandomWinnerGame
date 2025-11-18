@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Helios Ten-Chi</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body{background:#0F1419;color:#fff;font-family:'Inter',sans-serif;margin:0}.nav{background:rgba(15,20,25,.95);backdrop-filter:blur(20px);padding:1rem 2rem;border-bottom:1px solid rgba(255,255,255,.1);position:sticky;top:0;z-index:100;display:flex;justify-content:space-between;align-items:center}.nav-logo{display:flex;align-items:center;gap:.75rem;font-weight:700;font-size:1.25rem;color:#fff;text-decoration:none}.nav-logo svg{width:32px;height:32px}.nav-links{display:flex;gap:2rem;list-style:none;margin:0;padding:0}.nav-links a{color:rgba(255,255,255,.7);text-decoration:none;transition:color .3s}.nav-links a:hover,.nav-links a.active{color:#FDB813}.container{max-width:1200px;margin:0 auto;padding:2rem}.profile-header{background:linear-gradient(135deg,rgba(253,184,19,.2),rgba(255,107,53,.2));border-radius:1rem;padding:2rem;margin-bottom:2rem;display:flex;align-items:center;gap:2rem}.profile-avatar{width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,#FDB813,#FF6B35);display:flex;align-items:center;justify-content:center;font-size:3rem}.profile-info h1{font-size:2rem;margin-bottom:.5rem}.profile-info p{color:rgba(255,255,255,.7);margin-bottom:1rem}.wallet-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1rem;background:rgba(255,255,255,.1);border-radius:2rem;font-size:.875rem}.card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:1rem;padding:1.5rem;margin-bottom:1.5rem}.card-title{font-size:1.25rem;font-weight:600;margin-bottom:1.5rem}.form-group{margin-bottom:1.5rem}.label{display:block;margin-bottom:.5rem;color:rgba(255,255,255,.7);font-size:.875rem}.input{width:100%;padding:.875rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:.5rem;color:#fff;font-size:1rem}.input:focus{outline:none;border-color:#FDB813}.btn{padding:.875rem 1.5rem;background:linear-gradient(135deg,#FDB813,#FF6B35);border:none;border-radius:.5rem;color:#fff;font-weight:600;cursor:pointer}.panel-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);border-radius:.75rem;padding:1rem;margin-bottom:1rem;display:flex;justify-content:space-between;align-items:center}.panel-status{padding:.25rem .75rem;border-radius:1rem;font-size:.75rem;background:rgba(16,185,129,.2);color:#10B981}@media(max-width:768px){.profile-header{flex-direction:column;text-align:center}.nav-links{display:none}}
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="dashboard.html" class="nav-logo">
+            <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" stroke="url(#g1)" stroke-width="2"/><path d="M20 8L23 17H32L25 22L28 31L20 26L12 31L15 22L8 17H17L20 8Z" fill="url(#g1)"/><defs><linearGradient id="g1" x1="0" y1="0" x2="40" y2="40"><stop offset="0%" stop-color="#FDB813"/><stop offset="100%" stop-color="#FF6B35"/></linearGradient></defs></svg>
+            <span>Helios Ten-Chi</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="marketplace.html">Marketplace</a></li>
+            <li><a href="trading.html">Trading</a></li>
+            <li><a href="credits.html">Solar Credits</a></li>
+            <li><a href="profile.html" class="active">Profile</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="profile-header">
+            <div class="profile-avatar">👤</div>
+            <div class="profile-info">
+                <h1>Solar Producer</h1>
+                <p>Member since January 2025</p>
+                <div class="wallet-badge"><span>🔗</span><span>GBXH...K7M2</span></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 class="card-title">Personal Information</h2>
+            <form>
+                <div class="form-group"><label class="label">Full Name</label><input type="text" class="input" value="John Solar" placeholder="Your name"></div>
+                <div class="form-group"><label class="label">Email Address</label><input type="email" class="input" value="john@solarpro.com" placeholder="your@email.com"></div>
+                <div class="form-group"><label class="label">Location</label><input type="text" class="input" value="California, USA" placeholder="Your location"></div>
+                <button class="btn">Save Changes</button>
+            </form>
+        </div>
+
+        <div class="card">
+            <h2 class="card-title">My Solar Panels</h2>
+            <div class="panel-card"><div><h4 style="margin:0 0 .25rem">Residential Array 5kW</h4><p style="margin:0;font-size:.875rem;color:rgba(255,255,255,.5)">Installed: Jan 2024 • SolarTech Pro</p></div><span class="panel-status">✓ Verified</span></div>
+            <div class="panel-card"><div><h4 style="margin:0 0 .25rem">Commercial Panel 3kW</h4><p style="margin:0;font-size:.875rem;color:rgba(255,255,255,.5)">Installed: Mar 2024 • EcoPanel Max</p></div><span class="panel-status">✓ Verified</span></div>
+            <button class="btn" style="margin-top:1rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.2)">+ Add New Panel</button>
+        </div>
+
+        <div class="card">
+            <h2 class="card-title">Account Settings</h2>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:1rem;background:rgba(255,255,255,.03);border-radius:.5rem;margin-bottom:1rem"><div><h4 style="margin:0 0 .25rem">Email Notifications</h4><p style="margin:0;font-size:.875rem;color:rgba(255,255,255,.5)">Receive trade alerts and updates</p></div><input type="checkbox" checked style="width:20px;height:20px"></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:1rem;background:rgba(255,255,255,.03);border-radius:.5rem;margin-bottom:1rem"><div><h4 style="margin:0 0 .25rem">Two-Factor Authentication</h4><p style="margin:0;font-size:.875rem;color:rgba(255,255,255,.5)">Add extra security to your account</p></div><button class="btn" style="padding:.5rem 1rem">Enable</button></div>
+        </div>
+    </div>
+</body>
+</html>

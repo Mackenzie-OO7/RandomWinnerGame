@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Helios Ten-Chi</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body { background: #0F1419; color: white; font-family: 'Inter', sans-serif; margin: 0; }
+        .dashboard-nav { background: rgba(15, 20, 25, 0.95); backdrop-filter: blur(20px); padding: 1rem 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { display: flex; align-items: center; gap: 0.75rem; font-weight: 700; font-size: 1.25rem; }
+        .nav-logo svg { width: 32px; height: 32px; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0; }
+        .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: #FDB813; }
+        .user-menu { display: flex; align-items: center; gap: 1rem; }
+        .wallet-address { padding: 0.5rem 1rem; background: rgba(253,184,19,0.1); border: 1px solid rgba(253,184,19,0.3); border-radius: 2rem; font-size: 0.875rem; color: #FDB813; }
+        .dashboard-container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+        .dashboard-header { margin-bottom: 2rem; }
+        .dashboard-header h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+        .dashboard-header p { color: rgba(255,255,255,0.6); }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+        .stat-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 1rem; padding: 1.5rem; transition: all 0.3s; }
+        .stat-card:hover { background: rgba(255,255,255,0.08); border-color: rgba(253,184,19,0.3); transform: translateY(-4px); }
+        .stat-label { color: rgba(255,255,255,0.6); font-size: 0.875rem; margin-bottom: 0.5rem; }
+        .stat-value { font-size: 2rem; font-weight: 700; color: white; margin-bottom: 0.5rem; }
+        .stat-change { font-size: 0.875rem; color: #10B981; }
+        .stat-change.negative { color: #EF4444; }
+        .content-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; }
+        .card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 1rem; padding: 1.5rem; }
+        .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+        .card-title { font-size: 1.25rem; font-weight: 600; }
+        .card-link { color: #FDB813; font-size: 0.875rem; text-decoration: none; }
+        .activity-item { padding: 1rem; background: rgba(255,255,255,0.03); border-radius: 0.5rem; margin-bottom: 0.75rem; display: flex; justify-content: space-between; align-items: center; }
+        .activity-info { display: flex; align-items: center; gap: 1rem; }
+        .activity-icon { width: 40px; height: 40px; border-radius: 0.5rem; background: linear-gradient(135deg, #FDB813, #FF6B35); display: flex; align-items: center; justify-content: center; }
+        .activity-details h4 { margin: 0 0 0.25rem 0; font-size: 0.875rem; }
+        .activity-details p { margin: 0; font-size: 0.75rem; color: rgba(255,255,255,0.5); }
+        .activity-amount { font-weight: 600; }
+        .quick-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .action-btn { padding: 1rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 0.75rem; text-align: center; cursor: pointer; transition: all 0.3s; text-decoration: none; display: block; color: white; }
+        .action-btn:hover { background: rgba(253,184,19,0.1); border-color: rgba(253,184,19,0.3); }
+        .action-btn svg { width: 32px; height: 32px; margin: 0 auto 0.5rem; display: block; }
+        .chart-placeholder { height: 200px; background: rgba(255,255,255,0.03); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.3); margin-top: 1rem; }
+        @media (max-width: 1024px) {
+            .content-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="dashboard-nav">
+        <div class="nav-logo">
+            <svg viewBox="0 0 40 40" fill="none">
+                <circle cx="20" cy="20" r="18" stroke="url(#g1)" stroke-width="2"/>
+                <path d="M20 8L23 17H32L25 22L28 31L20 26L12 31L15 22L8 17H17L20 8Z" fill="url(#g1)"/>
+                <defs><linearGradient id="g1" x1="0" y1="0" x2="40" y2="40"><stop offset="0%" stop-color="#FDB813"/><stop offset="100%" stop-color="#FF6B35"/></linearGradient></defs>
+            </svg>
+            <span>Helios Ten-Chi</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="dashboard.html" class="active">Dashboard</a></li>
+            <li><a href="marketplace.html">Marketplace</a></li>
+            <li><a href="trading.html">Trading</a></li>
+            <li><a href="credits.html">Solar Credits</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+        <div class="user-menu">
+            <span class="wallet-address">GBXH...K7M2</span>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <div class="dashboard-header">
+            <h1>Welcome back, Solar Producer!</h1>
+            <p>Here's your energy trading overview</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">Total Energy Generated</div>
+                <div class="stat-value">12,458 kWh</div>
+                <div class="stat-change">↑ 23% from last month</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Solar Credits Earned</div>
+                <div class="stat-value">2,847 XLM</div>
+                <div class="stat-change">↑ 18% from last month</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Active Trades</div>
+                <div class="stat-value">14</div>
+                <div class="stat-change">6 pending settlements</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Portfolio Value</div>
+                <div class="stat-value">$8,234</div>
+                <div class="stat-change">↑ 12% from last week</div>
+            </div>
+        </div>
+
+        <div class="content-grid">
+            <div>
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Recent Activity</h3>
+                        <a href="#" class="card-link">View All →</a>
+                    </div>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-info">
+                                <div class="activity-icon">⚡</div>
+                                <div class="activity-details">
+                                    <h4>Energy Sold</h4>
+                                    <p>2 hours ago • Settlement: 3-5 seconds</p>
+                                </div>
+                            </div>
+                            <div class="activity-amount">+145 XLM</div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-info">
+                                <div class="activity-icon">🔋</div>
+                                <div class="activity-details">
+                                    <h4>Solar Credits Purchased</h4>
+                                    <p>5 hours ago • From GreenTech Solar</p>
+                                </div>
+                            </div>
+                            <div class="activity-amount">-89 XLM</div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-info">
+                                <div class="activity-icon">☀️</div>
+                                <div class="activity-details">
+                                    <h4>Panel Verified</h4>
+                                    <p>1 day ago • 5kW Residential Array</p>
+                                </div>
+                            </div>
+                            <div class="activity-amount">Verified</div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-info">
+                                <div class="activity-icon">💱</div>
+                                <div class="activity-details">
+                                    <h4>Energy Trade Executed</h4>
+                                    <p>2 days ago • 450 kWh @ 0.32 XLM/kWh</p>
+                                </div>
+                            </div>
+                            <div class="activity-amount">+144 XLM</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top: 2rem;">
+                    <div class="card-header">
+                        <h3 class="card-title">Energy Production (Last 30 Days)</h3>
+                    </div>
+                    <div class="chart-placeholder">
+                        📊 Production Chart: 12,458 kWh generated this month
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Quick Actions</h3>
+                    </div>
+                    <div class="quick-actions">
+                        <a href="trading.html" class="action-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+                            </svg>
+                            <div>Trade Energy</div>
+                        </a>
+                        <a href="marketplace.html" class="action-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/>
+                            </svg>
+                            <div>Buy Panels</div>
+                        </a>
+                        <a href="credits.html" class="action-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/>
+                            </svg>
+                            <div>View Credits</div>
+                        </a>
+                        <a href="profile.html" class="action-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/>
+                            </svg>
+                            <div>My Profile</div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top: 1.5rem;">
+                    <div class="card-header">
+                        <h3 class="card-title">Market Insights</h3>
+                    </div>
+                    <div style="color: rgba(255,255,255,0.7); font-size: 0.875rem; line-height: 1.6;">
+                        <p style="margin-bottom: 1rem;">Current energy price: <strong style="color: #FDB813;">0.32 XLM/kWh</strong></p>
+                        <p style="margin-bottom: 1rem;">24h volume: <strong>2.4M kWh traded</strong></p>
+                        <p style="margin-bottom: 1rem;">Peak demand hours: <strong style="color: #10B981;">6pm - 9pm</strong></p>
+                        <p>Stellar network status: <strong style="color: #10B981;">● Online</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simulate real-time updates
+        setInterval(() => {
+            const statValues = document.querySelectorAll('.stat-value');
+            // Add subtle animation to show live updates
+        }, 5000);
+    </script>
+</body>
+</html>

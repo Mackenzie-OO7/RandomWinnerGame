@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Trading - Helios Ten-Chi</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body{background:#0F1419;color:#fff;font-family:'Inter',sans-serif;margin:0}.nav{background:rgba(15,20,25,.95);backdrop-filter:blur(20px);padding:1rem 2rem;border-bottom:1px solid rgba(255,255,255,.1);position:sticky;top:0;z-index:100;display:flex;justify-content:space-between;align-items:center}.nav-logo{display:flex;align-items:center;gap:.75rem;font-weight:700;font-size:1.25rem;color:#fff;text-decoration:none}.nav-logo svg{width:32px;height:32px}.nav-links{display:flex;gap:2rem;list-style:none;margin:0;padding:0}.nav-links a{color:rgba(255,255,255,.7);text-decoration:none;transition:color .3s}.nav-links a:hover,.nav-links a.active{color:#FDB813}.container{max-width:1400px;margin:0 auto;padding:2rem}.trading-grid{display:grid;grid-template-columns:1fr 400px;gap:2rem;margin-top:2rem}.card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:1rem;padding:1.5rem}.card-title{font-size:1.5rem;font-weight:600;margin-bottom:1.5rem}.form-group{margin-bottom:1.5rem}.label{display:block;margin-bottom:.5rem;color:rgba(255,255,255,.7);font-size:.875rem}.input{width:100%;padding:.875rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:.5rem;color:#fff;font-size:1rem}.input:focus{outline:none;border-color:#FDB813;background:rgba(255,255,255,.08)}.btn{width:100%;padding:1rem;background:linear-gradient(135deg,#FDB813,#FF6B35);border:none;border-radius:.5rem;color:#fff;font-weight:600;cursor:pointer;transition:all .3s}.btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(253,184,19,.4)}.price-display{font-size:2rem;font-weight:700;color:#FDB813;margin:1rem 0}.order-book{max-height:400px;overflow-y:auto}.order-item{display:flex;justify-content:space-between;padding:.75rem;background:rgba(255,255,255,.03);border-radius:.5rem;margin-bottom:.5rem}.order-item.buy{border-left:3px solid #10B981}.order-item.sell{border-left:3px solid #EF4444}.price{color:#FDB813}.amount{color:rgba(255,255,255,.7)}@media(max-width:1024px){.nav-links{display:none}.trading-grid{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="dashboard.html" class="nav-logo">
+            <svg viewBox="0 0 40 40" fill="none">
+                <circle cx="20" cy="20" r="18" stroke="url(#g1)" stroke-width="2"/>
+                <path d="M20 8L23 17H32L25 22L28 31L20 26L12 31L15 22L8 17H17L20 8Z" fill="url(#g1)"/>
+                <defs><linearGradient id="g1" x1="0" y1="0" x2="40" y2="40"><stop offset="0%" stop-color="#FDB813"/><stop offset="100%" stop-color="#FF6B35"/></linearGradient></defs>
+            </svg>
+            <span>Helios Ten-Chi</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="marketplace.html">Marketplace</a></li>
+            <li><a href="trading.html" class="active">Trading</a></li>
+            <li><a href="credits.html">Solar Credits</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1 style="font-size:2.5rem;margin-bottom:.5rem">Energy Trading Platform</h1>
+        <p style="color:rgba(255,255,255,.6);font-size:1.125rem">Buy and sell solar energy credits on Stellar blockchain</p>
+
+        <div class="trading-grid">
+            <div>
+                <div class="card">
+                    <h2 class="card-title">Place Trade Order</h2>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2rem">
+                        <button class="btn" style="background:rgba(16,185,129,.2);border:1px solid #10B981" onclick="setType('buy')">Buy Energy</button>
+                        <button class="btn" style="background:rgba(239,68,68,.2);border:1px solid #EF4444" onclick="setType('sell')">Sell Energy</button>
+                    </div>
+                    <form id="tradeForm">
+                        <div class="form-group">
+                            <label class="label">Amount (kWh)</label>
+                            <input type="number" class="input" placeholder="100" value="100" id="amount">
+                        </div>
+                        <div class="form-group">
+                            <label class="label">Price (XLM per kWh)</label>
+                            <input type="number" step="0.01" class="input" placeholder="0.32" value="0.32" id="price">
+                        </div>
+                        <div class="form-group">
+                            <label class="label">Total Cost</label>
+                            <div class="price-display" id="total">32.00 XLM</div>
+                        </div>
+                        <button type="submit" class="btn">Execute Trade</button>
+                    </form>
+                </div>
+
+                <div class="card" style="margin-top:2rem">
+                    <h2 class="card-title">Your Open Orders</h2>
+                    <div class="order-item buy">
+                        <div><div style="font-weight:600">Buy 500 kWh</div><div class="amount">@ 0.30 XLM/kWh</div></div>
+                        <button style="background:rgba(239,68,68,.2);border:none;padding:.5rem 1rem;border-radius:.25rem;color:#fff;cursor:pointer">Cancel</button>
+                    </div>
+                    <div class="order-item sell">
+                        <div><div style="font-weight:600">Sell 300 kWh</div><div class="amount">@ 0.35 XLM/kWh</div></div>
+                        <button style="background:rgba(239,68,68,.2);border:none;padding:.5rem 1rem;border-radius:.25rem;color:#fff;cursor:pointer">Cancel</button>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="card">
+                    <h2 class="card-title">Market Price</h2>
+                    <div class="price-display" style="font-size:3rem;text-align:center">0.32 XLM</div>
+                    <div style="text-align:center;color:#10B981;margin-bottom:2rem">↑ +5.2% (24h)</div>
+                    <div style="height:150px;background:rgba(255,255,255,.03);border-radius:.5rem;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.3)">📈 Price Chart</div>
+                </div>
+
+                <div class="card" style="margin-top:1.5rem">
+                    <h2 class="card-title">Order Book</h2>
+                    <div style="margin-bottom:1rem;font-size:.875rem;color:rgba(255,255,255,.5);display:flex;justify-content:space-between"><span>Price</span><span>Amount</span><span>Total</span></div>
+                    <div class="order-book">
+                        <div class="order-item sell"><span class="price">0.35</span><span class="amount">450</span><span>157.5</span></div>
+                        <div class="order-item sell"><span class="price">0.34</span><span class="amount">620</span><span>210.8</span></div>
+                        <div class="order-item sell"><span class="price">0.33</span><span class="amount">890</span><span>293.7</span></div>
+                        <div style="height:2px;background:#FDB813;margin:1rem 0"></div>
+                        <div class="order-item buy"><span class="price">0.32</span><span class="amount">1200</span><span>384.0</span></div>
+                        <div class="order-item buy"><span class="price">0.31</span><span class="amount">740</span><span>229.4</span></div>
+                        <div class="order-item buy"><span class="price">0.30</span><span class="amount">960</span><span>288.0</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let tradeType='buy';
+        function setType(type){tradeType=type}
+        function updateTotal(){
+            const amount=document.getElementById('amount').value;
+            const price=document.getElementById('price').value;
+            const total=(amount*price).toFixed(2);
+            document.getElementById('total').textContent=total+' XLM';
+        }
+        document.getElementById('amount').addEventListener('input',updateTotal);
+        document.getElementById('price').addEventListener('input',updateTotal);
+        document.getElementById('tradeForm').addEventListener('submit',function(e){
+            e.preventDefault();
+            alert(`${tradeType.toUpperCase()} order placed!\n\nSettled on Stellar in 3-5 seconds ✓`);
+        });
+    </script>
+</body>
+</html>
